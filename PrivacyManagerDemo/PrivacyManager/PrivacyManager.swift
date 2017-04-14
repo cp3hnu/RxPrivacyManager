@@ -14,45 +14,36 @@ import CoreLocation
 import RxSwift
 import RxCocoa
 
-public typealias PrivacyClosure = () -> Void
 
-private func onMainThread(block: () -> Void) {
-    dispatch_async(dispatch_get_main_queue(), block)
+private func onMainThread(_ block: @escaping () -> Void) {
+    DispatchQueue.main.async(execute: block)
 }
 
 private let CLLocationZero = CLLocation(latitude: 0, longitude: 0)
-public class PrivacyManager {
-    public static let sharedInstance = PrivacyManager()
+open class PrivacyManager {
+    open static let sharedInstance = PrivacyManager()
     
     lazy var locationManager: CLLocationManager = {
         let locationManager = CLLocationManager()
         locationManager.distanceFilter = 100
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
         
-        let subject = BehaviorSubject<CLLocation>(value: CLLocationZero)
-        self.locationSubject = subject
-        _ = locationManager.rx_didUpdateLocations.subscribeNext { locations in
-            subject.onNext(locations.last ?? CLLocationZero)
-        }
-        
         return locationManager
     }()
-    
-    private var locationSubject: BehaviorSubject<CLLocation>!
 }
 
 // MARK: - Camera
 public extension PrivacyManager {
     /// 获取相机访问权限的状态
     public var cameraStatus: PermissionStatus {
-        let status = AVCaptureDevice.authorizationStatusForMediaType(AVMediaTypeVideo)
+        let status = AVCaptureDevice.authorizationStatus(forMediaType: AVMediaTypeVideo)
         switch status {
-        case .Authorized:
-            return .Authorized
-        case .Restricted, .Denied:
-            return .Unauthorized
-        case .NotDetermined:
-            return .Unknown
+        case .authorized:
+            return .authorized
+        case .restricted, .denied:
+            return .unauthorized
+        case .notDetermined:
+            return .unknown
         }
     }
     
@@ -62,15 +53,15 @@ public extension PrivacyManager {
             let status = self.cameraStatus
             observer.onNext(status)
             
-            if status == PermissionStatus.Unknown {
-                AVCaptureDevice.requestAccessForMediaType(
-                    AVMediaTypeVideo,
+            if status == PermissionStatus.unknown {
+                AVCaptureDevice.requestAccess(
+                    forMediaType: AVMediaTypeVideo,
                     completionHandler: { granted in
                         onMainThread {
                             if granted {
-                                observer.onNext(PermissionStatus.Authorized)
+                                observer.onNext(PermissionStatus.authorized)
                             } else {
-                                observer.onNext(PermissionStatus.Unauthorized)
+                                observer.onNext(PermissionStatus.unauthorized)
                             }
                             observer.onCompleted()
                         }
@@ -80,7 +71,7 @@ public extension PrivacyManager {
                 observer.onCompleted()
             }
             
-            return NopDisposable.instance
+            return Disposables.create()
         }
     }
 }
@@ -91,12 +82,12 @@ public extension PrivacyManager {
     public var photosStatus: PermissionStatus {
         let status = PHPhotoLibrary.authorizationStatus()
         switch status {
-        case .Authorized:
-            return .Authorized
-        case .Denied, .Restricted:
-            return .Unauthorized
-        case .NotDetermined:
-            return .Unknown
+        case .authorized:
+            return .authorized
+        case .denied, .restricted:
+            return .unauthorized
+        case .notDetermined:
+            return .unknown
         }
     }
     
@@ -106,13 +97,13 @@ public extension PrivacyManager {
             let status = self.photosStatus
             observer.onNext(status)
             
-            if status == PermissionStatus.Unknown {
+            if status == PermissionStatus.unknown {
                 PHPhotoLibrary.requestAuthorization { status in
                     onMainThread {
-                        if status == .Authorized {
-                            observer.onNext(PermissionStatus.Authorized)
+                        if status == .authorized {
+                            observer.onNext(PermissionStatus.authorized)
                         } else {
-                            observer.onNext(PermissionStatus.Unauthorized)
+                            observer.onNext(PermissionStatus.unauthorized)
                         }
                         observer.onCompleted()
                     }
@@ -121,7 +112,7 @@ public extension PrivacyManager {
                 observer.onCompleted()
             }
             
-            return NopDisposable.instance
+            return Disposables.create()
         }
     }
 }
@@ -132,35 +123,36 @@ public extension PrivacyManager {
     public var locationStatus: PermissionStatus {
         let status = CLLocationManager.authorizationStatus()
         switch status {
-        case .AuthorizedAlways, .AuthorizedWhenInUse:
-            return .Authorized
-        case .Denied, .Restricted:
-            return .Unauthorized
-        case .NotDetermined:
-            return .Unknown
+        case .authorizedAlways, .authorizedWhenInUse:
+            return .authorized
+        case .denied, .restricted:
+            return .unauthorized
+        case .notDetermined:
+            return .unknown
         }
     }
     
     /// 获取定位权限的状态 - Driver
-    var rx_locationStatus: Driver<PermissionStatus> {
+    public var rx_locationStatus: Driver<PermissionStatus> {
         let status: Driver<PermissionStatus> = Observable.deferred { [weak locationManager] in
             let status = CLLocationManager.authorizationStatus()
             guard let locationManager = locationManager else {
                 return Observable.just(status)
             }
             return locationManager
-                .rx_didChangeAuthorizationStatus
+                .rx
+                .didChangeAuthorizationStatus
                 .startWith(status)
             }
-            .asDriver(onErrorJustReturn: CLAuthorizationStatus.NotDetermined)
+            .asDriver(onErrorJustReturn: CLAuthorizationStatus.notDetermined)
             .map {
                 switch $0 {
-                case .NotDetermined:
-                    return PermissionStatus.Unknown
-                case .AuthorizedWhenInUse, .AuthorizedAlways:
-                    return PermissionStatus.Authorized
+                case .notDetermined:
+                    return PermissionStatus.unknown
+                case .authorizedWhenInUse, .authorizedAlways:
+                    return PermissionStatus.authorized
                 default:
-                    return PermissionStatus.Unauthorized
+                    return PermissionStatus.unauthorized
                 }
         }
         
@@ -168,7 +160,7 @@ public extension PrivacyManager {
     }
     
     /// 请求定位访问权限
-    func requestLocation(always: Bool = false) {
+    public func requestLocation(always: Bool = false) {
         if always {
             locationManager.requestAlwaysAuthorization()
         } else {
@@ -179,33 +171,22 @@ public extension PrivacyManager {
     }
     
     /// 获取当前位置
-    var rx_location: Observable<CLLocation> {
-        get {
-            return locationSubject.asObservable()
-                .filter{ $0 != CLLocationZero }
-                .map{ (location) -> CLLocation in
-                    // map WGC-84 to DB-09 coordinator
-                    let newLocation = JZLocationConverter.wgs84ToBd09(location.coordinate)
-                    return CLLocation(latitude: newLocation.latitude, longitude: newLocation.longitude)
-                }
-        }
+    public var rx_location: Driver<CLLocationCoordinate2D> {
+        return locationManager.rx.didUpdateLocations
+            .asDriver(onErrorJustReturn: [])
+            .flatMap {
+                return $0.last.map(Driver.just) ?? Driver.empty()
+            }
+            .map { $0.coordinate }
     }
 }
 
-
-// MARK: - Help
-public extension UIViewController {
-    func privacyUnauthorized(type: PermissionType, cancelBlock: PrivacyClosure? = nil, settingBlock: PrivacyClosure? = nil) {
-        let appName = UIDevice.currentDevice().appName
-        presentAlertController(title: "\"\(appName)\"没有获得\(type.description)的访问权限", message: "请允许\"\(appName)\"访问您的\(type.description)", cancelTitle: "取消", cancelAction: { _ in
-            cancelBlock?()
-            }, preferredTitle: "设置", preferredAction: { _ in
-                settingBlock?()
-                let settingsUrl = NSURL(string: UIApplicationOpenSettingsURLString)!
-                UIApplication.sharedApplication().openURL(settingsUrl)
-        })
-    }
+public extension PrivacyManager {
+    
 }
+
+
+
 
 
 
