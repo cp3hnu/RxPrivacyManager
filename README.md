@@ -53,6 +53,10 @@ PrivacyManager.sharedInstance.rx_cameraPermission
 -   Xcode 8.0+
 -   iOS 9+
 
+## Others
+
+[Carthage-and-nested-frameworks](http://stylekit.org/blog/2017/02/03/Carthage-and-nested-frameworks/)
+
 ## License
 
 Released under the MIT license. See LICENSE for details.
