@@ -43,12 +43,15 @@ PrivacyManager.sharedInstance.rx_cameraPermission
      )
 ```
 
+## Dependencies
+
+*   [RxSwift 3.4+](https://github.com/ReactiveX/RxSwift)
+
 ## Requirements
 
 -   Swift 3.0+
 -   Xcode 8.0+
 -   iOS 9+
--   RxSwift 3.4+
 
 ## License
 
