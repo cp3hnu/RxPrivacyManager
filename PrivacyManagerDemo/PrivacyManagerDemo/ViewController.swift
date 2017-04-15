@@ -9,7 +9,6 @@
 import UIKit
 import RxSwift
 import PrivacyManager
-import Stevia
 
 class ViewController: UIViewController {
 
@@ -114,23 +113,15 @@ class ViewController: UIViewController {
                 }
             )
 
+        [button1, button2, button3, button4].forEach { button in
+            button.translatesAutoresizingMaskIntoConstraints = false
+            self.view.addSubview(button)
+        }
         
-        view.sv(
-            button1,
-            button2,
-            button3,
-            button4
-        )
-        view.layout(
-            80,
-            |-15-button1-15-| ~ 40,
-            40,
-            |-15-button2-15-| ~ 40,
-            40,
-            |-15-button3-15-| ~ 40,
-            40,
-            |-15-button4-15-| ~ 40
-        )
+        view.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:|-80-[button1(==40)]-40-[button2(==40)]-40-[button3(==40)]-40-[button4(==40)]", options: NSLayoutFormatOptions(rawValue: 0), metrics: nil, views: ["button1" : button1, "button2" : button2, "button3" : button3, "button4" : button4]))
+        [button1, button2, button3, button4].forEach { button in
+            view.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|-15-[button]-15-|", options: NSLayoutFormatOptions(rawValue: 0), metrics: nil, views: ["button" : button]))
+        }
     }
 }
 

@@ -12,7 +12,6 @@
 		35884C041EA2581E00FD4C26 /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 358BB7BC1EA2575500B1E07B /* RxCocoa.framework */; };
 		35884C051EA258C800FD4C26 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 358BB7BE1EA2575900B1E07B /* RxSwift.framework */; };
 		35884C061EA258CB00FD4C26 /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 358BB7BC1EA2575500B1E07B /* RxCocoa.framework */; };
-		358BB7BB1EA2575100B1E07B /* Stevia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 358BB7BA1EA2575100B1E07B /* Stevia.framework */; };
 		358BB7BF1EA2575900B1E07B /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 358BB7BE1EA2575900B1E07B /* RxSwift.framework */; };
 		35C728D61E9FB590000BC8CD /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35C728D51E9FB590000BC8CD /* UIViewController.swift */; };
 		DB85E2651E9F227100AFAFE3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB85E2641E9F227100AFAFE3 /* AppDelegate.swift */; };
@@ -38,15 +37,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		35884C071EA258EC00FD4C26 /* CopyFiles */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 7;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		DB85E2871E9F228500AFAFE3 /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -63,7 +53,6 @@
 /* Begin PBXFileReference section */
 		3517C5701EA0428800A1BFBE /* CLLocationManager+Rx.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CLLocationManager+Rx.swift"; sourceTree = "<group>"; };
 		3517C5711EA0428800A1BFBE /* RxCLLocationManagerDelegateProxy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RxCLLocationManagerDelegateProxy.swift; sourceTree = "<group>"; };
-		358BB7BA1EA2575100B1E07B /* Stevia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Stevia.framework; path = ../Carthage/Build/iOS/Stevia.framework; sourceTree = "<group>"; };
 		358BB7BC1EA2575500B1E07B /* RxCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxCocoa.framework; path = ../Carthage/Build/iOS/RxCocoa.framework; sourceTree = "<group>"; };
 		358BB7BE1EA2575900B1E07B /* RxSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwift.framework; path = ../Carthage/Build/iOS/RxSwift.framework; sourceTree = "<group>"; };
 		35C728D51E9FB590000BC8CD /* UIViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
@@ -89,7 +78,6 @@
 				DB85E2821E9F228500AFAFE3 /* PrivacyManager.framework in Frameworks */,
 				358BB7BF1EA2575900B1E07B /* RxSwift.framework in Frameworks */,
 				35884C041EA2581E00FD4C26 /* RxCocoa.framework in Frameworks */,
-				358BB7BB1EA2575100B1E07B /* Stevia.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -110,7 +98,6 @@
 			children = (
 				358BB7BE1EA2575900B1E07B /* RxSwift.framework */,
 				358BB7BC1EA2575500B1E07B /* RxCocoa.framework */,
-				358BB7BA1EA2575100B1E07B /* Stevia.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -150,12 +137,12 @@
 		DB85E27C1E9F228500AFAFE3 /* PrivacyManager */ = {
 			isa = PBXGroup;
 			children = (
-				3517C5701EA0428800A1BFBE /* CLLocationManager+Rx.swift */,
-				3517C5711EA0428800A1BFBE /* RxCLLocationManagerDelegateProxy.swift */,
 				DB85E27D1E9F228500AFAFE3 /* PrivacyManager.h */,
 				DB85E29C1E9F4B8E00AFAFE3 /* PrivacyManager.swift */,
 				DB85E29D1E9F4B8E00AFAFE3 /* Struct.swift */,
 				35C728D51E9FB590000BC8CD /* UIViewController.swift */,
+				3517C5701EA0428800A1BFBE /* CLLocationManager+Rx.swift */,
+				3517C5711EA0428800A1BFBE /* RxCLLocationManagerDelegateProxy.swift */,
 				DB85E27F1E9F228500AFAFE3 /* Info.plist */,
 			);
 			path = PrivacyManager;
@@ -203,7 +190,6 @@
 				DB85E2771E9F228500AFAFE3 /* Frameworks */,
 				DB85E2781E9F228500AFAFE3 /* Headers */,
 				DB85E2791E9F228500AFAFE3 /* Resources */,
-				35884C071EA258EC00FD4C26 /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -282,7 +268,6 @@
 			);
 			inputPaths = (
 				"$(SRCROOT)/../Carthage/Build/iOS/RxSwift.framework",
-				"$(SRCROOT)/../Carthage/Build/iOS/Stevia.framework",
 				"$(SRCROOT)/../Carthage/Build/iOS/RxCocoa.framework",
 			);
 			outputPaths = (
