@@ -9,11 +9,12 @@
 /* Begin PBXBuildFile section */
 		3517C5721EA0428800A1BFBE /* CLLocationManager+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3517C5701EA0428800A1BFBE /* CLLocationManager+Rx.swift */; };
 		3517C5731EA0428800A1BFBE /* RxCLLocationManagerDelegateProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3517C5711EA0428800A1BFBE /* RxCLLocationManagerDelegateProxy.swift */; };
-		358BB7891EA1E1D500B1E07B /* Stevia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 358BB7881EA1E1D500B1E07B /* Stevia.framework */; };
-		358BB7AD1EA22D9D00B1E07B /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 35C728DC1E9FBADB000BC8CD /* RxCocoa.framework */; };
-		358BB7AE1EA22D9E00B1E07B /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 35C728D81E9FB9AC000BC8CD /* RxSwift.framework */; };
+		35884C041EA2581E00FD4C26 /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 358BB7BC1EA2575500B1E07B /* RxCocoa.framework */; };
+		35884C051EA258C800FD4C26 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 358BB7BE1EA2575900B1E07B /* RxSwift.framework */; };
+		35884C061EA258CB00FD4C26 /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 358BB7BC1EA2575500B1E07B /* RxCocoa.framework */; };
+		358BB7BB1EA2575100B1E07B /* Stevia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 358BB7BA1EA2575100B1E07B /* Stevia.framework */; };
+		358BB7BF1EA2575900B1E07B /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 358BB7BE1EA2575900B1E07B /* RxSwift.framework */; };
 		35C728D61E9FB590000BC8CD /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35C728D51E9FB590000BC8CD /* UIViewController.swift */; };
-		35C728DB1E9FB9EB000BC8CD /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 35C728D81E9FB9AC000BC8CD /* RxSwift.framework */; };
 		DB85E2651E9F227100AFAFE3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB85E2641E9F227100AFAFE3 /* AppDelegate.swift */; };
 		DB85E2671E9F227100AFAFE3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB85E2661E9F227100AFAFE3 /* ViewController.swift */; };
 		DB85E26A1E9F227100AFAFE3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DB85E2681E9F227100AFAFE3 /* Main.storyboard */; };
@@ -37,6 +38,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
+		35884C071EA258EC00FD4C26 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 7;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		DB85E2871E9F228500AFAFE3 /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -53,10 +63,10 @@
 /* Begin PBXFileReference section */
 		3517C5701EA0428800A1BFBE /* CLLocationManager+Rx.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CLLocationManager+Rx.swift"; sourceTree = "<group>"; };
 		3517C5711EA0428800A1BFBE /* RxCLLocationManagerDelegateProxy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RxCLLocationManagerDelegateProxy.swift; sourceTree = "<group>"; };
-		358BB7881EA1E1D500B1E07B /* Stevia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Stevia.framework; path = Carthage/Build/iOS/Stevia.framework; sourceTree = "<group>"; };
+		358BB7BA1EA2575100B1E07B /* Stevia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Stevia.framework; path = ../Carthage/Build/iOS/Stevia.framework; sourceTree = "<group>"; };
+		358BB7BC1EA2575500B1E07B /* RxCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxCocoa.framework; path = ../Carthage/Build/iOS/RxCocoa.framework; sourceTree = "<group>"; };
+		358BB7BE1EA2575900B1E07B /* RxSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwift.framework; path = ../Carthage/Build/iOS/RxSwift.framework; sourceTree = "<group>"; };
 		35C728D51E9FB590000BC8CD /* UIViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
-		35C728D81E9FB9AC000BC8CD /* RxSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwift.framework; path = Carthage/Build/iOS/RxSwift.framework; sourceTree = "<group>"; };
-		35C728DC1E9FBADB000BC8CD /* RxCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxCocoa.framework; path = Carthage/Build/iOS/RxCocoa.framework; sourceTree = "<group>"; };
 		DB85E2611E9F227100AFAFE3 /* PrivacyManagerDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PrivacyManagerDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DB85E2641E9F227100AFAFE3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DB85E2661E9F227100AFAFE3 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -77,8 +87,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				DB85E2821E9F228500AFAFE3 /* PrivacyManager.framework in Frameworks */,
-				35C728DB1E9FB9EB000BC8CD /* RxSwift.framework in Frameworks */,
-				358BB7891EA1E1D500B1E07B /* Stevia.framework in Frameworks */,
+				358BB7BF1EA2575900B1E07B /* RxSwift.framework in Frameworks */,
+				35884C041EA2581E00FD4C26 /* RxCocoa.framework in Frameworks */,
+				358BB7BB1EA2575100B1E07B /* Stevia.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -86,8 +97,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				358BB7AD1EA22D9D00B1E07B /* RxCocoa.framework in Frameworks */,
-				358BB7AE1EA22D9E00B1E07B /* RxSwift.framework in Frameworks */,
+				35884C051EA258C800FD4C26 /* RxSwift.framework in Frameworks */,
+				35884C061EA258CB00FD4C26 /* RxCocoa.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -97,9 +108,9 @@
 		35C728D71E9FB9AC000BC8CD /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				358BB7881EA1E1D500B1E07B /* Stevia.framework */,
-				35C728DC1E9FBADB000BC8CD /* RxCocoa.framework */,
-				35C728D81E9FB9AC000BC8CD /* RxSwift.framework */,
+				358BB7BE1EA2575900B1E07B /* RxSwift.framework */,
+				358BB7BC1EA2575500B1E07B /* RxCocoa.framework */,
+				358BB7BA1EA2575100B1E07B /* Stevia.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -192,6 +203,7 @@
 				DB85E2771E9F228500AFAFE3 /* Frameworks */,
 				DB85E2781E9F228500AFAFE3 /* Headers */,
 				DB85E2791E9F228500AFAFE3 /* Resources */,
+				35884C071EA258EC00FD4C26 /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -269,9 +281,9 @@
 			files = (
 			);
 			inputPaths = (
-				"$(SRCROOT)/Carthage/Build/iOS/RxSwift.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/RxCocoa.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/Stevia.framework",
+				"$(SRCROOT)/../Carthage/Build/iOS/RxSwift.framework",
+				"$(SRCROOT)/../Carthage/Build/iOS/Stevia.framework",
+				"$(SRCROOT)/../Carthage/Build/iOS/RxCocoa.framework",
 			);
 			outputPaths = (
 			);
@@ -429,7 +441,7 @@
 				DEVELOPMENT_TEAM = RJF3498JFC;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/iOS",
+					"$(PROJECT_DIR)/../Carthage/Build/iOS",
 				);
 				INFOPLIST_FILE = PrivacyManagerDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -447,7 +459,7 @@
 				DEVELOPMENT_TEAM = RJF3498JFC;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/iOS",
+					"$(PROJECT_DIR)/../Carthage/Build/iOS",
 				);
 				INFOPLIST_FILE = PrivacyManagerDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -469,7 +481,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/iOS",
+					"$(PROJECT_DIR)/../Carthage/Build/iOS",
 				);
 				INFOPLIST_FILE = PrivacyManager/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
@@ -497,7 +509,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/iOS",
+					"$(PROJECT_DIR)/../Carthage/Build/iOS",
 				);
 				INFOPLIST_FILE = PrivacyManager/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
