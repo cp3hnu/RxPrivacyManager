@@ -1,1 +1,2 @@
-git "https://github.com/ReactiveX/RxSwift.git"
+github "ReactiveX/RxSwift"
+github "s4cha/Stevia"

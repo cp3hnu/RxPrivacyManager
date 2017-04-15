@@ -11,9 +11,9 @@ import Foundation
 import AVFoundation
 import Photos
 import CoreLocation
+import Contacts
 import RxSwift
 import RxCocoa
-
 
 private func onMainThread(_ block: @escaping () -> Void) {
     DispatchQueue.main.async(execute: block)
@@ -38,36 +38,36 @@ public extension PrivacyManager {
     public var cameraStatus: PermissionStatus {
         let status = AVCaptureDevice.authorizationStatus(forMediaType: AVMediaTypeVideo)
         switch status {
-        case .authorized:
-            return .authorized
-        case .restricted, .denied:
-            return .unauthorized
         case .notDetermined:
             return .unknown
+        case .authorized:
+            return .authorized
+        case .denied:
+            return .unauthorized
+        case .restricted:
+            return .disabled
         }
     }
     
     /// 获取相机访问权限的状态 - Observable
-    public var rx_cameraStatus: Observable<PermissionStatus> {
+    public var rx_cameraPermission: Observable<Bool> {
         return Observable.create{ observer -> Disposable in
             let status = self.cameraStatus
-            observer.onNext(status)
-            
-            if status == PermissionStatus.unknown {
+            switch status {
+            case .unknown:
                 AVCaptureDevice.requestAccess(
                     forMediaType: AVMediaTypeVideo,
                     completionHandler: { granted in
                         onMainThread {
-                            if granted {
-                                observer.onNext(PermissionStatus.authorized)
-                            } else {
-                                observer.onNext(PermissionStatus.unauthorized)
-                            }
+                            observer.onNext(granted)
                             observer.onCompleted()
                         }
-                    }
-                )
-            } else {
+                })
+            case .authorized:
+                observer.onNext(true)
+                observer.onCompleted()
+            default:
+                observer.onNext(false)
                 observer.onCompleted()
             }
             
@@ -82,33 +82,34 @@ public extension PrivacyManager {
     public var photosStatus: PermissionStatus {
         let status = PHPhotoLibrary.authorizationStatus()
         switch status {
-        case .authorized:
-            return .authorized
-        case .denied, .restricted:
-            return .unauthorized
         case .notDetermined:
             return .unknown
+        case .authorized:
+            return .authorized
+        case .denied:
+            return .unauthorized
+        case .restricted:
+            return .disabled
         }
     }
     
     /// 获取照片访问权限的状态 - Observable
-    public var rx_photosStatus: Observable<PermissionStatus> {
+    public var rx_photosPermission: Observable<Bool> {
         return Observable.create{ observer -> Disposable in
             let status = self.photosStatus
-            observer.onNext(status)
-            
-            if status == PermissionStatus.unknown {
+            switch status {
+            case .unknown:
                 PHPhotoLibrary.requestAuthorization { status in
                     onMainThread {
-                        if status == .authorized {
-                            observer.onNext(PermissionStatus.authorized)
-                        } else {
-                            observer.onNext(PermissionStatus.unauthorized)
-                        }
+                        observer.onNext(status == .authorized)
                         observer.onCompleted()
                     }
                 }
-            } else {
+            case .authorized:
+                observer.onNext(true)
+                observer.onCompleted()
+            default:
+                observer.onNext(false)
                 observer.onCompleted()
             }
             
@@ -123,18 +124,20 @@ public extension PrivacyManager {
     public var locationStatus: PermissionStatus {
         let status = CLLocationManager.authorizationStatus()
         switch status {
-        case .authorizedAlways, .authorizedWhenInUse:
-            return .authorized
-        case .denied, .restricted:
-            return .unauthorized
         case .notDetermined:
             return .unknown
+        case .authorizedAlways, .authorizedWhenInUse:
+            return .authorized
+        case .denied:
+            return .unauthorized
+        case .restricted:
+            return .disabled
         }
     }
     
     /// 获取定位权限的状态 - Driver
-    public var rx_locationStatus: Driver<PermissionStatus> {
-        let status: Driver<PermissionStatus> = Observable.deferred { [weak locationManager] in
+    public var rx_locationPermission: Observable<PermissionStatus> {
+        let status: Observable<PermissionStatus> = Observable.deferred { [weak locationManager] in
             let status = CLLocationManager.authorizationStatus()
             guard let locationManager = locationManager else {
                 return Observable.just(status)
@@ -144,7 +147,7 @@ public extension PrivacyManager {
                 .didChangeAuthorizationStatus
                 .startWith(status)
             }
-            .asDriver(onErrorJustReturn: CLAuthorizationStatus.notDetermined)
+            .catchErrorJustReturn(CLAuthorizationStatus.notDetermined)
             .map {
                 switch $0 {
                 case .notDetermined:
@@ -154,7 +157,8 @@ public extension PrivacyManager {
                 default:
                     return PermissionStatus.unauthorized
                 }
-        }
+            }
+            .distinctUntilChanged()
         
         return status
     }
@@ -181,12 +185,87 @@ public extension PrivacyManager {
     }
 }
 
+// MARK: - Microphone
 public extension PrivacyManager {
+    /// 获取麦克风访问权限的状态
+    public var microphoneStatus: PermissionStatus {
+        let status = AVAudioSession.sharedInstance().recordPermission()
+        switch status {
+        case AVAudioSessionRecordPermission.undetermined:
+            return .unknown
+        case AVAudioSessionRecordPermission.granted:
+            return .authorized
+        default:
+            return .unauthorized
+        }
+    }
     
+    /// 获取麦克风访问权限的状态 - Observable
+    public var rx_microphonePermission: Observable<Bool> {
+        return Observable.create{ observer -> Disposable in
+            let status = self.microphoneStatus
+            switch status {
+            case .unknown:
+                AVAudioSession.sharedInstance().requestRecordPermission({ granted in
+                    onMainThread {
+                        observer.onNext(granted)
+                        observer.onCompleted()
+                    }
+                })
+            case .authorized:
+                observer.onNext(true)
+                observer.onCompleted()
+            default:
+                observer.onNext(false)
+                observer.onCompleted()
+            }
+            
+            return Disposables.create()
+        }
+    }
 }
 
-
-
+// MARK: - Contact
+public extension PrivacyManager {
+    /// 获取通讯录访问权限的状态
+    public var contactStatus: PermissionStatus {
+        let status = CNContactStore.authorizationStatus(for: CNEntityType.contacts)
+        switch status {
+        case .notDetermined:
+            return .unknown
+        case .authorized:
+            return .authorized
+        case .denied:
+            return .unauthorized
+        case .restricted:
+            return .disabled
+        }
+    }
+    
+    /// 获取通讯录访问权限的状态 - Observable
+    public var rx_contactPermission: Observable<Bool> {
+        return Observable.create{ observer -> Disposable in
+            let status = self.contactStatus
+            switch status {
+            case .unknown:
+                CNContactStore().requestAccess(for: CNEntityType.contacts, completionHandler: { (granted, error) in
+                    onMainThread {
+                        observer.onNext(granted)
+                        observer.onCompleted()
+                    }
+                })
+            case .authorized:
+                observer.onNext(true)
+                observer.onCompleted()
+            default:
+                observer.onNext(false)
+                observer.onCompleted()
+            }
+            
+            return Disposables.create()
+        }
+    }
+}
 
 
 

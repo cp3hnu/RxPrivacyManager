@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		3517C5721EA0428800A1BFBE /* CLLocationManager+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3517C5701EA0428800A1BFBE /* CLLocationManager+Rx.swift */; };
 		3517C5731EA0428800A1BFBE /* RxCLLocationManagerDelegateProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3517C5711EA0428800A1BFBE /* RxCLLocationManagerDelegateProxy.swift */; };
+		358BB7891EA1E1D500B1E07B /* Stevia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 358BB7881EA1E1D500B1E07B /* Stevia.framework */; };
 		35C728D61E9FB590000BC8CD /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35C728D51E9FB590000BC8CD /* UIViewController.swift */; };
 		35C728D91E9FB9AC000BC8CD /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 35C728D81E9FB9AC000BC8CD /* RxSwift.framework */; };
 		35C728DB1E9FB9EB000BC8CD /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 35C728D81E9FB9AC000BC8CD /* RxSwift.framework */; };
@@ -52,6 +53,7 @@
 /* Begin PBXFileReference section */
 		3517C5701EA0428800A1BFBE /* CLLocationManager+Rx.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CLLocationManager+Rx.swift"; sourceTree = "<group>"; };
 		3517C5711EA0428800A1BFBE /* RxCLLocationManagerDelegateProxy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RxCLLocationManagerDelegateProxy.swift; sourceTree = "<group>"; };
+		358BB7881EA1E1D500B1E07B /* Stevia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Stevia.framework; path = Carthage/Build/iOS/Stevia.framework; sourceTree = "<group>"; };
 		35C728D51E9FB590000BC8CD /* UIViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
 		35C728D81E9FB9AC000BC8CD /* RxSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwift.framework; path = Carthage/Build/iOS/RxSwift.framework; sourceTree = "<group>"; };
 		35C728DC1E9FBADB000BC8CD /* RxCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxCocoa.framework; path = Carthage/Build/iOS/RxCocoa.framework; sourceTree = "<group>"; };
@@ -76,6 +78,7 @@
 			files = (
 				DB85E2821E9F228500AFAFE3 /* PrivacyManager.framework in Frameworks */,
 				35C728DB1E9FB9EB000BC8CD /* RxSwift.framework in Frameworks */,
+				358BB7891EA1E1D500B1E07B /* Stevia.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -94,6 +97,7 @@
 		35C728D71E9FB9AC000BC8CD /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				358BB7881EA1E1D500B1E07B /* Stevia.framework */,
 				35C728DC1E9FBADB000BC8CD /* RxCocoa.framework */,
 				35C728D81E9FB9AC000BC8CD /* RxSwift.framework */,
 			);
@@ -282,6 +286,8 @@
 			);
 			inputPaths = (
 				"$(SRCROOT)/Carthage/Build/iOS/RxSwift.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/RxCocoa.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Stevia.framework",
 			);
 			outputPaths = (
 			);
