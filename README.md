@@ -32,15 +32,14 @@ github "cp3hnu/PrivacyManager"
 
 ```swift
 PrivacyManager.sharedInstance.rx_cameraPermission
-	.subscribe(
-		onNext: { [weak self] granted in
-			if granted {
-				print("authorization")
-             } else {
-                  print("unauthorization")
-             }
-         }
-     )
+    .subscribe(
+        onNext: { [weak self] granted in
+	    if granted {
+	        print("authorization")
+	    } else {
+	        print("unauthorization")
+	    }
+	})
 ```
 
 ## Dependencies
