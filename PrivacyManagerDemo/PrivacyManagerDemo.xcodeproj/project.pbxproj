@@ -11,9 +11,7 @@
 		3517C5731EA0428800A1BFBE /* RxCLLocationManagerDelegateProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3517C5711EA0428800A1BFBE /* RxCLLocationManagerDelegateProxy.swift */; };
 		358BB7891EA1E1D500B1E07B /* Stevia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 358BB7881EA1E1D500B1E07B /* Stevia.framework */; };
 		35C728D61E9FB590000BC8CD /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35C728D51E9FB590000BC8CD /* UIViewController.swift */; };
-		35C728D91E9FB9AC000BC8CD /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 35C728D81E9FB9AC000BC8CD /* RxSwift.framework */; };
 		35C728DB1E9FB9EB000BC8CD /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 35C728D81E9FB9AC000BC8CD /* RxSwift.framework */; };
-		35C728DD1E9FBADB000BC8CD /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 35C728DC1E9FBADB000BC8CD /* RxCocoa.framework */; };
 		DB85E2651E9F227100AFAFE3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB85E2641E9F227100AFAFE3 /* AppDelegate.swift */; };
 		DB85E2671E9F227100AFAFE3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB85E2661E9F227100AFAFE3 /* ViewController.swift */; };
 		DB85E26A1E9F227100AFAFE3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DB85E2681E9F227100AFAFE3 /* Main.storyboard */; };
@@ -86,8 +84,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				35C728D91E9FB9AC000BC8CD /* RxSwift.framework in Frameworks */,
-				35C728DD1E9FBADB000BC8CD /* RxCocoa.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -192,7 +188,6 @@
 				DB85E2771E9F228500AFAFE3 /* Frameworks */,
 				DB85E2781E9F228500AFAFE3 /* Headers */,
 				DB85E2791E9F228500AFAFE3 /* Resources */,
-				35C728DA1E9FB9B4000BC8CD /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -264,21 +259,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		35C728DA1E9FB9B4000BC8CD /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"$(SRCROOT)/Carthage/Build/iOS/RxSwift.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/RxCocoa.framework",
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "/usr/local/bin/carthage copy-frameworks";
-		};
 		DB85E2931E9F43C700AFAFE3 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
