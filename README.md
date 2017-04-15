@@ -27,7 +27,6 @@ github "cp3hnu/PrivacyManager"
 
 -   Add Input files *$(SRCROOT)/Carthage/Build/iOS/PrivacyManager.framework
 
-    ​
 
 ## Usage
 
