@@ -4,11 +4,11 @@ Privacy manager for iOS in RxSwift
 
 Currently supported:
 
-*   Location Services
-*   Contacts
-*   Photos
-*   Microphone
 *   Camera
+*   Photos
+*   Location Services
+*   Microphone
+*   Contacts
 
 ## Installation
 
@@ -25,7 +25,7 @@ github "cp3hnu/PrivacyManager"
   /usr/local/bin/carthage copy-frameworks
 ```
 
--   Add Input files *$(SRCROOT)/Carthage/Build/iOS/PrivacyManager.framework
+-   Add Input files *$(SRCROOT)/Carthage/Build/iOS/PrivacyManager.framework*
 
 
 ## Usage
