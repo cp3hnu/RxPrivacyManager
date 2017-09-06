@@ -41,7 +41,6 @@ class ViewController: UIViewController {
                     }
                 }
             )
-        //PrivacyManager.sharedInstance.requestLocation(always: false)
         
         view.backgroundColor = UIColor.white
         let button1 = UIButton()

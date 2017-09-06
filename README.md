@@ -50,7 +50,7 @@ PrivacyManager.sharedInstance.rx_cameraPermission
 
 -   Swift 3.0+
 -   Xcode 8.0+
--   iOS 9+
+-   iOS 8+
 
 ## Others
 

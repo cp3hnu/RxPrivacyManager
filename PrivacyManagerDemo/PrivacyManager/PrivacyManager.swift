@@ -3,7 +3,7 @@
 //  hnup
 //
 //  Created by CP3 on 16/7/4.
-//  Copyright © 2016年 DataYP. All rights reserved.
+//  Copyright © 2016年 CP3. All rights reserved.
 //
 
 import UIKit
@@ -14,6 +14,7 @@ import CoreLocation
 import Contacts
 import RxSwift
 import RxCocoa
+import AddressBook
 
 private func onMainThread(_ block: @escaping () -> Void) {
     DispatchQueue.main.async(execute: block)
@@ -269,16 +270,30 @@ public extension PrivacyManager {
 public extension PrivacyManager {
     /// 获取通讯录访问权限的状态
     public var contactStatus: PermissionStatus {
-        let status = CNContactStore.authorizationStatus(for: CNEntityType.contacts)
-        switch status {
-        case .notDetermined:
-            return .unknown
-        case .authorized:
-            return .authorized
-        case .denied:
-            return .unauthorized
-        case .restricted:
-            return .disabled
+        if #available(iOS 9.0, *) {
+            let status = CNContactStore.authorizationStatus(for: CNEntityType.contacts)
+            switch status {
+            case .notDetermined:
+                return .unknown
+            case .authorized:
+                return .authorized
+            case .denied:
+                return .unauthorized
+            case .restricted:
+                return .disabled
+            }
+        } else {
+            let status = ABAddressBookGetAuthorizationStatus()
+            switch status {
+            case .notDetermined:
+                return .unknown
+            case .authorized:
+                return .authorized
+            case .denied:
+                return .unauthorized
+            case .restricted:
+                return .disabled
+            }
         }
     }
     
@@ -288,12 +303,22 @@ public extension PrivacyManager {
             let status = self.contactStatus
             switch status {
             case .unknown:
-                CNContactStore().requestAccess(for: CNEntityType.contacts, completionHandler: { (granted, error) in
-                    onMainThread {
-                        observer.onNext(granted)
-                        observer.onCompleted()
-                    }
-                })
+                if #available(iOS 9.0, *) {
+                    CNContactStore().requestAccess(for: CNEntityType.contacts, completionHandler: { (granted, error) in
+                        onMainThread {
+                            observer.onNext(granted)
+                            observer.onCompleted()
+                        }
+                    })
+                } else {
+                    let addressBookRef: ABAddressBook = ABAddressBookCreateWithOptions(nil, nil).takeRetainedValue()
+                    ABAddressBookRequestAccessWithCompletion(addressBookRef, { (granted, error) in
+                        onMainThread {
+                            observer.onNext(granted)
+                            observer.onCompleted()
+                        }
+                    })
+                }
             case .authorized:
                 observer.onNext(true)
                 observer.onCompleted()
@@ -306,6 +331,3 @@ public extension PrivacyManager {
         }
     }
 }
-
-
-

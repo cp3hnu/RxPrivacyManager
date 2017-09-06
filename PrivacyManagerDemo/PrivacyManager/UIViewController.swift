@@ -25,7 +25,9 @@ public extension UIViewController {
         }
         alert.addAction(cancelAction)
         alert.addAction(settingAction)
-        alert.preferredAction = settingAction
+        if #available(iOS 9.0, *) {
+            alert.preferredAction = settingAction
+        }
         
         present(alert, animated: true, completion: nil)
     }

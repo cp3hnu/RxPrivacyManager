@@ -3,7 +3,7 @@
 //  hnup
 //
 //  Created by CP3 on 16/7/4.
-//  Copyright © 2016年 DataYP. All rights reserved.
+//  Copyright © 2016年 CP3. All rights reserved.
 //
 
 import Foundation
