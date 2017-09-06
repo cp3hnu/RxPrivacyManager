@@ -30,7 +30,7 @@ class ViewController: UIViewController {
         let contactStatus = PrivacyManager.sharedInstance.contactStatus
         print("contactStatus = ", contactStatus)
         
-        _ = PrivacyManager.sharedInstance.rx_locationPermission
+        _ = PrivacyManager.sharedInstance.rx_locationInUsePermission
             .delay(1, scheduler: MainScheduler.instance)
             .subscribe(
                 onNext: { [weak self] status in
@@ -41,7 +41,7 @@ class ViewController: UIViewController {
                     }
                 }
             )
-        PrivacyManager.sharedInstance.requestLocation(always: false)
+        //PrivacyManager.sharedInstance.requestLocation(always: false)
         
         view.backgroundColor = UIColor.white
         let button1 = UIButton()

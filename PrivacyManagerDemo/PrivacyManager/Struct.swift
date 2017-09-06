@@ -41,7 +41,7 @@ public enum PermissionStatus: Int, CustomStringConvertible {
         case .unknown:      return "Unknown"
         case .authorized:   return "Authorized"
         case .unauthorized: return "Unauthorized"
-        case .disabled:     return "Disabled" // System-level
+        case .disabled:     return "Disabled" // System-level, Not Implementation
         }
     }
 }

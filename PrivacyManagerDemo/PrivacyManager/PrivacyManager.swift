@@ -135,13 +135,43 @@ public extension PrivacyManager {
         }
     }
     
-    /// 获取定位权限的状态 - Driver
-    public var rx_locationPermission: Observable<PermissionStatus> {
-        let status: Observable<PermissionStatus> = Observable.deferred { [weak locationManager] in
+    /// 获取定位权限的状态(Always) - Driver
+    public var rx_locationAlwaysPermission: Observable<PermissionStatus> {
+        let status: Observable<PermissionStatus> = Observable.deferred { [weak locationManager, weak self] in
             let status = CLLocationManager.authorizationStatus()
             guard let locationManager = locationManager else {
                 return Observable.just(status)
             }
+            self?.requestLocation(always: true)
+            return locationManager
+                .rx
+                .didChangeAuthorizationStatus
+                .startWith(status)
+            }
+            .catchErrorJustReturn(CLAuthorizationStatus.notDetermined)
+            .map {
+                switch $0 {
+                case .notDetermined:
+                    return PermissionStatus.unknown
+                case .authorizedWhenInUse, .authorizedAlways:
+                    return PermissionStatus.authorized
+                default:
+                    return PermissionStatus.unauthorized
+                }
+            }
+            .distinctUntilChanged()
+        
+        return status
+    }
+    
+    /// 获取定位权限的状态(InUse) - Driver
+    public var rx_locationInUsePermission: Observable<PermissionStatus> {
+        let status: Observable<PermissionStatus> = Observable.deferred { [weak locationManager, weak self] in
+            let status = CLLocationManager.authorizationStatus()
+            guard let locationManager = locationManager else {
+                return Observable.just(status)
+            }
+            self?.requestLocation(always: false)
             return locationManager
                 .rx
                 .didChangeAuthorizationStatus
@@ -182,6 +212,16 @@ public extension PrivacyManager {
                 return $0.last.map(Driver.just) ?? Driver.empty()
             }
             .map { $0.coordinate }
+    }
+    
+    /// 更新位置
+    public func startUpdatingLocation() {
+        locationManager.startUpdatingLocation()
+    }
+    
+    /// 停止更新位置
+    public func stopUpdatingLocation() {
+        locationManager.stopUpdatingLocation()
     }
 }
 
