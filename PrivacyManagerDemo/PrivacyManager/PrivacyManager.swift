@@ -16,15 +16,16 @@ import RxSwift
 import RxCocoa
 import AddressBook
 
-private func onMainThread(_ block: @escaping () -> Void) {
-    DispatchQueue.main.async(execute: block)
+private func onMainThread(_ closure: @escaping () -> Void) {
+    DispatchQueue.main.async {
+        closure()
+    }
 }
 
-private let CLLocationZero = CLLocation(latitude: 0, longitude: 0)
 open class PrivacyManager {
-    open static let sharedInstance = PrivacyManager()
+    public static let shared = PrivacyManager()
     
-    lazy var locationManager: CLLocationManager = {
+    fileprivate lazy var locationManager: CLLocationManager = {
         let locationManager = CLLocationManager()
         locationManager.distanceFilter = 100
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
@@ -136,7 +137,7 @@ public extension PrivacyManager {
         }
     }
     
-    /// 获取定位权限的状态(Always) - Driver
+    /// 获取定位权限的状态(Always)
     public var rx_locationAlwaysPermission: Observable<PermissionStatus> {
         let status: Observable<PermissionStatus> = Observable.deferred { [weak locationManager, weak self] in
             let status = CLLocationManager.authorizationStatus()
@@ -165,7 +166,7 @@ public extension PrivacyManager {
         return status
     }
     
-    /// 获取定位权限的状态(InUse) - Driver
+    /// 获取定位权限的状态(InUse)
     public var rx_locationInUsePermission: Observable<PermissionStatus> {
         let status: Observable<PermissionStatus> = Observable.deferred { [weak locationManager, weak self] in
             let status = CLLocationManager.authorizationStatus()
@@ -194,6 +195,16 @@ public extension PrivacyManager {
         return status
     }
     
+    /// 获取当前位置
+    public var rx_location: Driver<CLLocationCoordinate2D> {
+        return locationManager.rx.didUpdateLocations
+            .asDriver(onErrorJustReturn: [])
+            .flatMap {
+                return $0.last.map(Driver.just) ?? Driver.empty()
+            }
+            .map { $0.coordinate }
+    }
+    
     /// 请求定位访问权限
     public func requestLocation(always: Bool = false) {
         if always {
@@ -203,16 +214,6 @@ public extension PrivacyManager {
         }
         
         locationManager.startUpdatingLocation()
-    }
-    
-    /// 获取当前位置
-    public var rx_location: Driver<CLLocationCoordinate2D> {
-        return locationManager.rx.didUpdateLocations
-            .asDriver(onErrorJustReturn: [])
-            .flatMap {
-                return $0.last.map(Driver.just) ?? Driver.empty()
-            }
-            .map { $0.coordinate }
     }
     
     /// 更新位置

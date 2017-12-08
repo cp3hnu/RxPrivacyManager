@@ -15,92 +15,66 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let locationStatus = PrivacyManager.sharedInstance.locationStatus
+        let locationStatus = PrivacyManager.shared.locationStatus
         print("locationStatus = ", locationStatus)
         
-        let cameraStatus = PrivacyManager.sharedInstance.cameraStatus
+        let cameraStatus = PrivacyManager.shared.cameraStatus
         print("cameraStatus = ", cameraStatus)
         
-        let phoneStatus = PrivacyManager.sharedInstance.photosStatus
+        let phoneStatus = PrivacyManager.shared.photosStatus
         print("phoneStatus = ", phoneStatus)
         
-        let microphoneStatus = PrivacyManager.sharedInstance.microphoneStatus
+        let microphoneStatus = PrivacyManager.shared.microphoneStatus
         print("microphoneStatus = ", microphoneStatus)
         
-        let contactStatus = PrivacyManager.sharedInstance.contactStatus
+        let contactStatus = PrivacyManager.shared.contactStatus
         print("contactStatus = ", contactStatus)
-        
-        _ = PrivacyManager.sharedInstance.rx_locationInUsePermission
-            .delay(1, scheduler: MainScheduler.instance)
-            .subscribe(
-                onNext: { [weak self] status in
-                    if status == .unauthorized {
-                        self?.presentPrivacySetting(type: PermissionType.locationInUse)
-                    } else if status == .authorized {
-                        self?.present("定位服务已授权")
-                    }
-                }
-            )
+    
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
+            self.checkPermission(for: PermissionType.locationInUse, authorized: { [weak self] in
+                self?.present("定位服务已授权")
+            })
+        }
         
         view.backgroundColor = UIColor.white
         let button1 = UIButton()
         button1.setTitle("相机", for: .normal)
         button1.setTitleColor(UIColor.black, for: .normal)
-        _ = button1.rx.tap
-            .flatMap{ () -> Observable<Bool> in
-                return PrivacyManager.sharedInstance.rx_cameraPermission
+        _ = button1.rx.tap.subscribe(
+            onNext: { [weak self] _ in
+                self?.checkPermission(for: PermissionType.camera, authorized: { self?.present("相机已授权")
+                })
             }
-            .subscribe(
-                onNext: { [weak self] granted in
-                    if !granted {
-                        self?.presentPrivacySetting(type: PermissionType.camera)
-                    } else {
-                        self?.present("相机已授权")
-                    }
-                }
-            )
+        )
         
         let button2 = UIButton()
         button2.setTitle("照片", for: .normal)
         button2.setTitleColor(UIColor.black, for: .normal)
-        _ = button2.rx.tap
-            .flatMap{ () -> Observable<Bool> in
-                return PrivacyManager.sharedInstance.rx_photosPermission
+        _ = button2.rx.tap.subscribe(
+            onNext: { [weak self] _ in
+                self?.checkPermission(for: PermissionType.photos, authorized: { self?.present("照片已授权")
+                })
             }
-            .subscribe(
-                onNext: { [weak self] granted in
-                    if !granted {
-                        self?.presentPrivacySetting(type: PermissionType.photos)
-                    } else {
-                        self?.present("照片已授权")
-                    }
-                }
         )
         
         
         let button3 = UIButton()
         button3.setTitle("麦克风", for: .normal)
         button3.setTitleColor(UIColor.black, for: .normal)
-        _ = button3.rx.tap
-            .flatMap{ () -> Observable<Bool> in
-                return PrivacyManager.sharedInstance.rx_microphonePermission
+        _ = button3.rx.tap.subscribe(
+            onNext: { [weak self] _ in
+                self?.checkPermission(for: PermissionType.microphone, authorized: { self?.present("麦克风已授权")
+                })
             }
-            .subscribe(
-                onNext: { [weak self] granted in
-                    if !granted {
-                        self?.presentPrivacySetting(type: PermissionType.microphone)
-                    } else {
-                        self?.present("麦克风已授权")
-                    }
-                }
         )
         
+    
         let button4 = UIButton()
         button4.setTitle("通讯录", for: .normal)
         button4.setTitleColor(UIColor.black, for: .normal)
         _ = button4.rx.tap
             .flatMap{ () -> Observable<Bool> in
-                return PrivacyManager.sharedInstance.rx_contactPermission
+                return PrivacyManager.shared.rx_contactPermission
             }
             .subscribe(
                 onNext: { [weak self] granted in

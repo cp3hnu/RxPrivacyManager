@@ -7,11 +7,12 @@
 //
 
 import UIKit
+import RxSwift
 
 public typealias PrivacyClosure = () -> Void
 
-// MARK: - Help
-public extension UIViewController {
+// MARK: - Present Alert Controller
+extension UIViewController {
     public func presentPrivacySetting(type: PermissionType, cancelBlock: PrivacyClosure? = nil, settingBlock: PrivacyClosure? = nil) {
         let appName = Bundle.main.infoDictionary?["CFBundleDisplayName"] as? String ?? ""
         let alert = UIAlertController(title: "\"\(appName)\"没有获得\(type.description)的访问权限", message: "请允许\"\(appName)\"访问您的\(type.description)", preferredStyle: UIAlertControllerStyle.alert)
@@ -30,5 +31,43 @@ public extension UIViewController {
         }
         
         present(alert, animated: true, completion: nil)
+    }
+}
+
+// MARK: - Check Permission
+extension UIViewController {
+    public func checkPermission(for type: PermissionType, authorized authorizedAction: @escaping PrivacyClosure, canceled cancelAction: PrivacyClosure? = nil, setting settingAction: PrivacyClosure? = nil) {
+        _  = observable(for: type)
+            .takeUntil(rx.deallocated)
+            .subscribe(
+                onNext: { [weak self] result in
+                    if result {
+                        authorizedAction()
+                    } else {
+                        self?.presentPrivacySetting(type: PermissionType.camera, cancelBlock: cancelAction, settingBlock: settingAction)
+                    }
+                }
+        )
+    }
+    
+    private func observable(for type: PermissionType) -> Observable<Bool> {
+        switch type {
+        case PermissionType.camera:
+            return PrivacyManager.shared.rx_cameraPermission
+        case PermissionType.photos:
+            return PrivacyManager.shared.rx_photosPermission
+        case PermissionType.microphone:
+            return PrivacyManager.shared.rx_microphonePermission
+        case PermissionType.contacts:
+            return PrivacyManager.shared.rx_contactPermission
+        case PermissionType.locationAlways:
+            return PrivacyManager.shared.rx_locationAlwaysPermission
+                .filter{ $0 != .unknown }
+                .map{ $0 == .authorized }
+        case PermissionType.locationInUse:
+            return PrivacyManager.shared.rx_locationInUsePermission
+                .filter{ $0 != .unknown }
+                .map{ $0 == .authorized }
+        }
     }
 }
