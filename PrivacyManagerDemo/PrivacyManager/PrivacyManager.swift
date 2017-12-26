@@ -38,7 +38,7 @@ open class PrivacyManager {
 public extension PrivacyManager {
     /// 获取相机访问权限的状态
     public var cameraStatus: PermissionStatus {
-        let status = AVCaptureDevice.authorizationStatus(forMediaType: AVMediaTypeVideo)
+        let status = AVCaptureDevice.authorizationStatus(for: AVMediaType.video)
         switch status {
         case .notDetermined:
             return .unknown
@@ -58,7 +58,7 @@ public extension PrivacyManager {
             switch status {
             case .unknown:
                 AVCaptureDevice.requestAccess(
-                    forMediaType: AVMediaTypeVideo,
+                    for: AVMediaType.video,
                     completionHandler: { granted in
                         onMainThread {
                             observer.onNext(granted)
