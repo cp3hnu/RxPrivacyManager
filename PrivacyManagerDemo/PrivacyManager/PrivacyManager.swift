@@ -22,7 +22,7 @@ private func onMainThread(_ closure: @escaping () -> Void) {
     }
 }
 
-open class PrivacyManager {
+public class PrivacyManager {
     public static let shared = PrivacyManager()
     
     fileprivate lazy var locationManager: CLLocationManager = {
@@ -137,14 +137,14 @@ public extension PrivacyManager {
         }
     }
     
-    /// 获取定位权限的状态(Always)
-    public var rx_locationAlwaysPermission: Observable<PermissionStatus> {
+    /// 获取定位权限的状态
+    public func rx_locationPermission(always: Bool) -> Observable<PermissionStatus> {
         let status: Observable<PermissionStatus> = Observable.deferred { [weak locationManager, weak self] in
             let status = CLLocationManager.authorizationStatus()
             guard let locationManager = locationManager else {
                 return Observable.just(status)
             }
-            self?.requestLocation(always: true)
+            self?.requestLocation(always: always)
             return locationManager
                 .rx
                 .didChangeAuthorizationStatus
@@ -166,37 +166,18 @@ public extension PrivacyManager {
         return status
     }
     
-    /// 获取定位权限的状态(InUse)
-    public var rx_locationInUsePermission: Observable<PermissionStatus> {
-        let status: Observable<PermissionStatus> = Observable.deferred { [weak locationManager, weak self] in
-            let status = CLLocationManager.authorizationStatus()
-            guard let locationManager = locationManager else {
-                return Observable.just(status)
-            }
-            self?.requestLocation(always: false)
-            return locationManager
-                .rx
-                .didChangeAuthorizationStatus
-                .startWith(status)
-            }
-            .catchErrorJustReturn(CLAuthorizationStatus.notDetermined)
-            .map {
-                switch $0 {
-                case .notDetermined:
-                    return PermissionStatus.unknown
-                case .authorizedWhenInUse, .authorizedAlways:
-                    return PermissionStatus.authorized
-                default:
-                    return PermissionStatus.unauthorized
-                }
-            }
-            .distinctUntilChanged()
-        
-        return status
+    /// 获取位置
+    public var rx_locations: Observable<[CLLocation]> {
+        return locationManager.rx.didUpdateLocations
     }
     
-    /// 获取当前位置
-    public var rx_location: Driver<CLLocationCoordinate2D> {
+    /// 获取位置错误
+    public var rx_locationError: Observable<Error> {
+        return locationManager.rx.didFailWithError
+    }
+    
+    /// 获取最新位置
+    public var rx_recentLocation: Driver<CLLocationCoordinate2D> {
         return locationManager.rx.didUpdateLocations
             .asDriver(onErrorJustReturn: [])
             .flatMap {
@@ -206,7 +187,7 @@ public extension PrivacyManager {
     }
     
     /// 请求定位访问权限
-    public func requestLocation(always: Bool = false) {
+    public func requestLocation(always: Bool) {
         if always {
             locationManager.requestAlwaysAuthorization()
         } else {

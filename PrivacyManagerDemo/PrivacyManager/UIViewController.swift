@@ -36,7 +36,7 @@ extension UIViewController {
 
 // MARK: - Check Permission
 extension UIViewController {
-    public func checkPermission(for type: PermissionType, authorized authorizedAction: @escaping PrivacyClosure, canceled cancelAction: PrivacyClosure? = nil, setting settingAction: PrivacyClosure? = nil) {
+    public func privacyPermission(for type: PermissionType, authorized authorizedAction: @escaping PrivacyClosure, canceled cancelAction: PrivacyClosure? = nil, setting settingAction: PrivacyClosure? = nil) {
         _  = observable(for: type)
             .takeUntil(rx.deallocated)
             .subscribe(
@@ -61,11 +61,11 @@ extension UIViewController {
         case PermissionType.contacts:
             return PrivacyManager.shared.rx_contactPermission
         case PermissionType.locationAlways:
-            return PrivacyManager.shared.rx_locationAlwaysPermission
+            return PrivacyManager.shared.rx_locationPermission(always: true)
                 .filter{ $0 != .unknown }
                 .map{ $0 == .authorized }
         case PermissionType.locationInUse:
-            return PrivacyManager.shared.rx_locationInUsePermission
+            return PrivacyManager.shared.rx_locationPermission(always: false)
                 .filter{ $0 != .unknown }
                 .map{ $0 == .authorized }
         }

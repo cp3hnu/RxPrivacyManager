@@ -29,9 +29,10 @@ class ViewController: UIViewController {
         
         let contactStatus = PrivacyManager.shared.contactStatus
         print("contactStatus = ", contactStatus)
+        
     
         DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
-            self.checkPermission(for: PermissionType.locationInUse, authorized: { [weak self] in
+            self.privacyPermission(for: PermissionType.locationInUse, authorized: { [weak self] in
                 self?.present("定位服务已授权")
             })
         }
@@ -42,7 +43,7 @@ class ViewController: UIViewController {
         button1.setTitleColor(UIColor.black, for: .normal)
         _ = button1.rx.tap.subscribe(
             onNext: { [weak self] _ in
-                self?.checkPermission(for: PermissionType.camera, authorized: { self?.present("相机已授权")
+                self?.privacyPermission(for: PermissionType.camera, authorized: { self?.present("相机已授权")
                 })
             }
         )
@@ -52,7 +53,7 @@ class ViewController: UIViewController {
         button2.setTitleColor(UIColor.black, for: .normal)
         _ = button2.rx.tap.subscribe(
             onNext: { [weak self] _ in
-                self?.checkPermission(for: PermissionType.photos, authorized: { self?.present("照片已授权")
+                self?.privacyPermission(for: PermissionType.photos, authorized: { self?.present("照片已授权")
                 })
             }
         )
@@ -63,7 +64,7 @@ class ViewController: UIViewController {
         button3.setTitleColor(UIColor.black, for: .normal)
         _ = button3.rx.tap.subscribe(
             onNext: { [weak self] _ in
-                self?.checkPermission(for: PermissionType.microphone, authorized: { self?.present("麦克风已授权")
+                self?.privacyPermission(for: PermissionType.microphone, authorized: { self?.present("麦克风已授权")
                 })
             }
         )
