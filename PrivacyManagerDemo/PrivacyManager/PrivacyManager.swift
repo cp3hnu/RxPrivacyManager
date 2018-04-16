@@ -176,16 +176,6 @@ public extension PrivacyManager {
         return locationManager.rx.didFailWithError
     }
     
-    /// 获取最新位置
-    public var rx_recentLocation: Driver<CLLocationCoordinate2D> {
-        return locationManager.rx.didUpdateLocations
-            .asDriver(onErrorJustReturn: [])
-            .flatMap {
-                return $0.last.map(Driver.just) ?? Driver.empty()
-            }
-            .map { $0.coordinate }
-    }
-    
     /// 请求定位访问权限
     public func requestLocation(always: Bool) {
         if always {

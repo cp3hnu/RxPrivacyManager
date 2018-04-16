@@ -9,6 +9,7 @@
 import UIKit
 import RxSwift
 import PrivacyManager
+import CoreLocation
 
 class ViewController: UIViewController {
 
@@ -34,6 +35,18 @@ class ViewController: UIViewController {
         DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
             self.privacyPermission(for: PermissionType.locationInUse, authorized: { [weak self] in
                 self?.present("定位服务已授权")
+            })
+        }
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 3.0) {
+            _ = PrivacyManager.shared.rx_locations.subscribe(onNext: { locations in
+                print("locations", locations)
+            }, onError: { error in
+                print("error", error)
+            }, onCompleted: {
+                print("onCompleted")
+            }, onDisposed: {
+                print("onDisposed")
             })
         }
         
