@@ -1,6 +1,6 @@
 # PrivacyManager
 
-Privacy manager for iOS in RxSwift
+Privacy manager for iOS based on RxSwift
 
 Currently supported:
 
@@ -28,28 +28,41 @@ github "cp3hnu/PrivacyManager"
 -   Add Input files *$(SRCROOT)/Carthage/Build/iOS/PrivacyManager.framework*
 
 
+
+
 ## Usage
 
+**It's so easy!** Just a function call
+
 ```swift
-PrivacyManager.sharedInstance.rx_cameraPermission
-    .subscribe(
-        onNext: { [weak self] granted in
-	    if granted {
-	        print("authorization")
-	    } else {
-	        print("unauthorization")
-	    }
-	})
+// In UIViewController and subclasses
+privacyPermission(for: PermissionType.camera, authorized: {
+	// Picker photos
+})
 ```
+
+
+
+## Screenshot
+
+##### For the first time
+
+![](screenshot-1.png)
+
+##### Without authorization
+
+![](screenshot-2.png)
+
+
 
 ## Dependencies
 
-*   [RxSwift 4.0](https://github.com/ReactiveX/RxSwift)
+*   [RxSwift 4.1.2](https://github.com/ReactiveX/RxSwift)
 
 ## Requirements
 
--   Swift 4.0+
--   Xcode 9.0+
+-   Swift 4.1+
+-   Xcode 9.3+
 -   iOS 8+
 
 ## Others
