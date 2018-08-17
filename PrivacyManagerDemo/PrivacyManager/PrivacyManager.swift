@@ -25,7 +25,7 @@ private func onMainThread(_ closure: @escaping () -> Void) {
 public class PrivacyManager {
     public static let shared = PrivacyManager()
     
-    fileprivate lazy var locationManager: CLLocationManager = {
+    public lazy var locationManager: CLLocationManager = {
         let locationManager = CLLocationManager()
         locationManager.distanceFilter = 100
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
@@ -52,7 +52,7 @@ public extension PrivacyManager {
     }
     
     /// 获取相机访问权限的状态 - Observable
-    public var rx_cameraPermission: Observable<Bool> {
+    public var rxCameraPermission: Observable<Bool> {
         return Observable.create{ observer -> Disposable in
             let status = self.cameraStatus
             switch status {
@@ -96,7 +96,7 @@ public extension PrivacyManager {
     }
     
     /// 获取照片访问权限的状态 - Observable
-    public var rx_photosPermission: Observable<Bool> {
+    public var rxPhotosPermission: Observable<Bool> {
         return Observable.create{ observer -> Disposable in
             let status = self.photosStatus
             switch status {
@@ -138,7 +138,7 @@ public extension PrivacyManager {
     }
     
     /// 获取定位权限的状态
-    public func rx_locationPermission(always: Bool) -> Observable<PermissionStatus> {
+    public func rxLocationPermission(always: Bool) -> Observable<PermissionStatus> {
         let status: Observable<PermissionStatus> = Observable.deferred { [weak locationManager, weak self] in
             let status = CLLocationManager.authorizationStatus()
             guard let locationManager = locationManager else {
@@ -167,12 +167,12 @@ public extension PrivacyManager {
     }
     
     /// 获取位置
-    public var rx_locations: Observable<[CLLocation]> {
+    public var rxLocations: Observable<[CLLocation]> {
         return locationManager.rx.didUpdateLocations
     }
     
     /// 获取位置错误
-    public var rx_locationError: Observable<Error> {
+    public var rxLocationError: Observable<Error> {
         return locationManager.rx.didFailWithError
     }
     
@@ -214,7 +214,7 @@ public extension PrivacyManager {
     }
     
     /// 获取麦克风访问权限的状态 - Observable
-    public var rx_microphonePermission: Observable<Bool> {
+    public var rxMicrophonePermission: Observable<Bool> {
         return Observable.create{ observer -> Disposable in
             let status = self.microphoneStatus
             switch status {
@@ -270,7 +270,7 @@ public extension PrivacyManager {
     }
     
     /// 获取通讯录访问权限的状态 - Observable
-    public var rx_contactPermission: Observable<Bool> {
+    public var rxContactPermission: Observable<Bool> {
         return Observable.create{ observer -> Disposable in
             let status = self.contactStatus
             switch status {

@@ -53,19 +53,19 @@ extension UIViewController {
     private func observable(for type: PermissionType) -> Observable<Bool> {
         switch type {
         case PermissionType.camera:
-            return PrivacyManager.shared.rx_cameraPermission
+            return PrivacyManager.shared.rxCameraPermission
         case PermissionType.photos:
-            return PrivacyManager.shared.rx_photosPermission
+            return PrivacyManager.shared.rxPhotosPermission
         case PermissionType.microphone:
-            return PrivacyManager.shared.rx_microphonePermission
+            return PrivacyManager.shared.rxMicrophonePermission
         case PermissionType.contacts:
-            return PrivacyManager.shared.rx_contactPermission
+            return PrivacyManager.shared.rxContactPermission
         case PermissionType.locationAlways:
-            return PrivacyManager.shared.rx_locationPermission(always: true)
+            return PrivacyManager.shared.rxLocationPermission(always: true)
                 .filter{ $0 != .unknown }
                 .map{ $0 == .authorized }
         case PermissionType.locationInUse:
-            return PrivacyManager.shared.rx_locationPermission(always: false)
+            return PrivacyManager.shared.rxLocationPermission(always: false)
                 .filter{ $0 != .unknown }
                 .map{ $0 == .authorized }
         }

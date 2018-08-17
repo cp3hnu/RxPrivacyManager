@@ -39,7 +39,7 @@ class ViewController: UIViewController {
         }
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 3.0) {
-            _ = PrivacyManager.shared.rx_locations.subscribe(onNext: { locations in
+            _ = PrivacyManager.shared.rxLocations.subscribe(onNext: { locations in
                 print("locations", locations)
             }, onError: { error in
                 print("error", error)
@@ -88,7 +88,7 @@ class ViewController: UIViewController {
         button4.setTitleColor(UIColor.black, for: .normal)
         _ = button4.rx.tap
             .flatMap{ () -> Observable<Bool> in
-                return PrivacyManager.shared.rx_contactPermission
+                return PrivacyManager.shared.rxContactPermission
             }
             .subscribe(
                 onNext: { [weak self] granted in
