@@ -202,11 +202,11 @@ public extension PrivacyManager {
 public extension PrivacyManager {
     /// 获取麦克风访问权限的状态
     public var microphoneStatus: PermissionStatus {
-        let status = AVAudioSession.sharedInstance().recordPermission()
+        let status = AVAudioSession.sharedInstance().recordPermission
         switch status {
-        case AVAudioSessionRecordPermission.undetermined:
+        case .undetermined:
             return .unknown
-        case AVAudioSessionRecordPermission.granted:
+        case .granted:
             return .authorized
         default:
             return .unauthorized

@@ -15,13 +15,13 @@ public typealias PrivacyClosure = () -> Void
 extension UIViewController {
     public func presentPrivacySetting(type: PermissionType, cancelBlock: PrivacyClosure? = nil, settingBlock: PrivacyClosure? = nil) {
         let appName = Bundle.main.infoDictionary?["CFBundleDisplayName"] as? String ?? ""
-        let alert = UIAlertController(title: "\"\(appName)\"没有获得\(type.description)的访问权限", message: "请允许\"\(appName)\"访问您的\(type.description)", preferredStyle: UIAlertControllerStyle.alert)
-        let cancelAction = UIAlertAction(title: "取消", style: UIAlertActionStyle.cancel) { _ in
+        let alert = UIAlertController(title: "\"\(appName)\"没有获得\(type.description)的访问权限", message: "请允许\"\(appName)\"访问您的\(type.description)", preferredStyle: UIAlertController.Style.alert)
+        let cancelAction = UIAlertAction(title: "取消", style: UIAlertAction.Style.cancel) { _ in
              cancelBlock?()
         }
-        let settingAction = UIAlertAction(title: "设置", style: UIAlertActionStyle.default) { _ in
+        let settingAction = UIAlertAction(title: "设置", style: UIAlertAction.Style.default) { _ in
             settingBlock?()
-            let settingsUrl = NSURL(string: UIApplicationOpenSettingsURLString)!
+            let settingsUrl = NSURL(string: UIApplication.openSettingsURLString)!
             UIApplication.shared.openURL(settingsUrl as URL)
         }
         alert.addAction(cancelAction)

@@ -103,17 +103,17 @@ class ViewController: UIViewController {
         [button1, button2, button3, button4].forEach { button in
             button.translatesAutoresizingMaskIntoConstraints = false
             view.addSubview(button)
-            view.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|-15-[button]-15-|", options: NSLayoutFormatOptions(rawValue: 0), metrics: nil, views: ["button" : button]))
+            view.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|-15-[button]-15-|", options: NSLayoutConstraint.FormatOptions(rawValue: 0), metrics: nil, views: ["button" : button]))
         }
         
-        view.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:|-80-[button1(==40)]-40-[button2(==40)]-40-[button3(==40)]-40-[button4(==40)]", options: NSLayoutFormatOptions(rawValue: 0), metrics: nil, views: ["button1" : button1, "button2" : button2, "button3" : button3, "button4" : button4]))
+        view.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:|-80-[button1(==40)]-40-[button2(==40)]-40-[button3(==40)]-40-[button4(==40)]", options: NSLayoutConstraint.FormatOptions(rawValue: 0), metrics: nil, views: ["button1" : button1, "button2" : button2, "button3" : button3, "button4" : button4]))
     }
 }
 
 private extension ViewController {
     func present(_ content: String) {
-        let alert = UIAlertController(title: content, message: "", preferredStyle: UIAlertControllerStyle.alert)
-        let action = UIAlertAction(title: "确定", style: UIAlertActionStyle.default, handler: nil)
+        let alert = UIAlertController(title: content, message: "", preferredStyle: UIAlertController.Style.alert)
+        let action = UIAlertAction(title: "确定", style: UIAlertAction.Style.default, handler: nil)
         alert.addAction(action)
         alert.preferredAction = action
         
