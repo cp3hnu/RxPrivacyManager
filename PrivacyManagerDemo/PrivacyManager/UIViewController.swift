@@ -13,9 +13,11 @@ public typealias PrivacyClosure = () -> Void
 
 // MARK: - Present Alert Controller
 extension UIViewController {
-    public func presentPrivacySetting(type: PermissionType, cancelBlock: PrivacyClosure? = nil, settingBlock: PrivacyClosure? = nil) {
+    public func presentPrivacySetting(type: PermissionType, desc: String? = nil, cancelBlock: PrivacyClosure? = nil, settingBlock: PrivacyClosure? = nil) {
         let appName = Bundle.main.infoDictionary?["CFBundleDisplayName"] as? String ?? ""
-        let alert = UIAlertController(title: "\"\(appName)\"没有获得\(type.description)的访问权限", message: "请允许\"\(appName)\"访问您的\(type.description)", preferredStyle: UIAlertController.Style.alert)
+        let title = "\"\(appName)\"没有获得\(type.description)的访问权限"
+        let message = desc ?? "请允许\"\(appName)\"访问您的\(type.description)，以便下一步操作。"
+        let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertController.Style.alert)
         let cancelAction = UIAlertAction(title: "取消", style: UIAlertAction.Style.cancel) { _ in
              cancelBlock?()
         }
@@ -26,9 +28,7 @@ extension UIViewController {
         }
         alert.addAction(cancelAction)
         alert.addAction(settingAction)
-        if #available(iOS 9.0, *) {
-            alert.preferredAction = settingAction
-        }
+        alert.preferredAction = settingAction
         
         present(alert, animated: true, completion: nil)
     }
@@ -36,7 +36,7 @@ extension UIViewController {
 
 // MARK: - Check Permission
 extension UIViewController {
-    public func privacyPermission(for type: PermissionType, authorized authorizedAction: @escaping PrivacyClosure, canceled cancelAction: PrivacyClosure? = nil, setting settingAction: PrivacyClosure? = nil) {
+    public func privacyPermission(for type: PermissionType, desc: String? = nil, authorized authorizedAction: @escaping PrivacyClosure, canceled cancelAction: PrivacyClosure? = nil, setting settingAction: PrivacyClosure? = nil) {
         _  = observable(for: type)
             .takeUntil(rx.deallocated)
             .subscribe(
@@ -44,7 +44,7 @@ extension UIViewController {
                     if result {
                         authorizedAction()
                     } else {
-                        self?.presentPrivacySetting(type: PermissionType.camera, cancelBlock: cancelAction, settingBlock: settingAction)
+                        self?.presentPrivacySetting(type: PermissionType.camera, desc: desc, cancelBlock: cancelAction, settingBlock: settingAction)
                     }
                 }
         )

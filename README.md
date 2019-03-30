@@ -1,4 +1,4 @@
-# PrivacyManager
+# RxPrivacyManager
 
 Privacy manager for iOS based on RxSwift
 
@@ -57,13 +57,13 @@ privacyPermission(for: PermissionType.camera, authorized: {
 
 ## Dependencies
 
-*   [RxSwift 4.1.2](https://github.com/ReactiveX/RxSwift)
+*   [RxSwift 4.3.1](https://github.com/ReactiveX/RxSwift)
 
 ## Requirements
 
--   Swift 4.1+
--   Xcode 9.3+
--   iOS 8+
+-   Swift 5.0
+-   Xcode 10.0
+-   iOS 9+
 
 ## Others
 

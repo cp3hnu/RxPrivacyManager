@@ -14,7 +14,6 @@ import CoreLocation
 import Contacts
 import RxSwift
 import RxCocoa
-import AddressBook
 
 private func onMainThread(_ closure: @escaping () -> Void) {
     DispatchQueue.main.async {
@@ -37,7 +36,7 @@ public class PrivacyManager {
 // MARK: - Camera
 public extension PrivacyManager {
     /// 获取相机访问权限的状态
-    public var cameraStatus: PermissionStatus {
+    var cameraStatus: PermissionStatus {
         let status = AVCaptureDevice.authorizationStatus(for: AVMediaType.video)
         switch status {
         case .notDetermined:
@@ -48,11 +47,13 @@ public extension PrivacyManager {
             return .unauthorized
         case .restricted:
             return .disabled
+        @unknown default:
+            return .unknown
         }
     }
     
     /// 获取相机访问权限的状态 - Observable
-    public var rxCameraPermission: Observable<Bool> {
+    var rxCameraPermission: Observable<Bool> {
         return Observable.create{ observer -> Disposable in
             let status = self.cameraStatus
             switch status {
@@ -81,7 +82,7 @@ public extension PrivacyManager {
 // MARK: - Picture
 public extension PrivacyManager {
     /// 获取照片访问权限的状态
-    public var photosStatus: PermissionStatus {
+    var photosStatus: PermissionStatus {
         let status = PHPhotoLibrary.authorizationStatus()
         switch status {
         case .notDetermined:
@@ -92,11 +93,13 @@ public extension PrivacyManager {
             return .unauthorized
         case .restricted:
             return .disabled
+        @unknown default:
+            return .unknown
         }
     }
     
     /// 获取照片访问权限的状态 - Observable
-    public var rxPhotosPermission: Observable<Bool> {
+    var rxPhotosPermission: Observable<Bool> {
         return Observable.create{ observer -> Disposable in
             let status = self.photosStatus
             switch status {
@@ -123,7 +126,7 @@ public extension PrivacyManager {
 // MARK: - Location
 public extension PrivacyManager {
     /// 获取定位访问权限的状态
-    public var locationStatus: PermissionStatus {
+    var locationStatus: PermissionStatus {
         let status = CLLocationManager.authorizationStatus()
         switch status {
         case .notDetermined:
@@ -134,18 +137,17 @@ public extension PrivacyManager {
             return .unauthorized
         case .restricted:
             return .disabled
+        @unknown default:
+            return .unknown
         }
     }
     
     /// 获取定位权限的状态
-    public func rxLocationPermission(always: Bool) -> Observable<PermissionStatus> {
-        let status: Observable<PermissionStatus> = Observable.deferred { [weak locationManager, weak self] in
+    func rxLocationPermission(always: Bool) -> Observable<PermissionStatus> {
+        let status: Observable<PermissionStatus> = Observable.deferred {
             let status = CLLocationManager.authorizationStatus()
-            guard let locationManager = locationManager else {
-                return Observable.just(status)
-            }
-            self?.requestLocation(always: always)
-            return locationManager
+            self.requestLocation(always: always)
+            return self.locationManager
                 .rx
                 .didChangeAuthorizationStatus
                 .startWith(status)
@@ -167,17 +169,17 @@ public extension PrivacyManager {
     }
     
     /// 获取位置
-    public var rxLocations: Observable<[CLLocation]> {
+    var rxLocations: Observable<[CLLocation]> {
         return locationManager.rx.didUpdateLocations
     }
     
     /// 获取位置错误
-    public var rxLocationError: Observable<Error> {
+    var rxLocationError: Observable<Error> {
         return locationManager.rx.didFailWithError
     }
     
     /// 请求定位访问权限
-    public func requestLocation(always: Bool) {
+    func requestLocation(always: Bool) {
         if always {
             locationManager.requestAlwaysAuthorization()
         } else {
@@ -188,12 +190,12 @@ public extension PrivacyManager {
     }
     
     /// 更新位置
-    public func startUpdatingLocation() {
+    func startUpdatingLocation() {
         locationManager.startUpdatingLocation()
     }
     
     /// 停止更新位置
-    public func stopUpdatingLocation() {
+    func stopUpdatingLocation() {
         locationManager.stopUpdatingLocation()
     }
 }
@@ -201,7 +203,7 @@ public extension PrivacyManager {
 // MARK: - Microphone
 public extension PrivacyManager {
     /// 获取麦克风访问权限的状态
-    public var microphoneStatus: PermissionStatus {
+    var microphoneStatus: PermissionStatus {
         let status = AVAudioSession.sharedInstance().recordPermission
         switch status {
         case .undetermined:
@@ -214,7 +216,7 @@ public extension PrivacyManager {
     }
     
     /// 获取麦克风访问权限的状态 - Observable
-    public var rxMicrophonePermission: Observable<Bool> {
+    var rxMicrophonePermission: Observable<Bool> {
         return Observable.create{ observer -> Disposable in
             let status = self.microphoneStatus
             switch status {
@@ -241,56 +243,34 @@ public extension PrivacyManager {
 // MARK: - Contact
 public extension PrivacyManager {
     /// 获取通讯录访问权限的状态
-    public var contactStatus: PermissionStatus {
-        if #available(iOS 9.0, *) {
-            let status = CNContactStore.authorizationStatus(for: CNEntityType.contacts)
-            switch status {
-            case .notDetermined:
-                return .unknown
-            case .authorized:
-                return .authorized
-            case .denied:
-                return .unauthorized
-            case .restricted:
-                return .disabled
-            }
-        } else {
-            let status = ABAddressBookGetAuthorizationStatus()
-            switch status {
-            case .notDetermined:
-                return .unknown
-            case .authorized:
-                return .authorized
-            case .denied:
-                return .unauthorized
-            case .restricted:
-                return .disabled
-            }
+    var contactStatus: PermissionStatus {
+        let status = CNContactStore.authorizationStatus(for: CNEntityType.contacts)
+        switch status {
+        case .notDetermined:
+            return .unknown
+        case .authorized:
+            return .authorized
+        case .denied:
+            return .unauthorized
+        case .restricted:
+            return .disabled
+        @unknown default:
+            return .unknown
         }
     }
     
     /// 获取通讯录访问权限的状态 - Observable
-    public var rxContactPermission: Observable<Bool> {
+    var rxContactPermission: Observable<Bool> {
         return Observable.create{ observer -> Disposable in
             let status = self.contactStatus
             switch status {
             case .unknown:
-                if #available(iOS 9.0, *) {
-                    CNContactStore().requestAccess(for: CNEntityType.contacts, completionHandler: { (granted, error) in
-                        onMainThread {
-                            observer.onNext(granted)
-                            observer.onCompleted()
-                        }
-                    })
-                } else {
-                    let addressBookRef: ABAddressBook = ABAddressBookCreateWithOptions(nil, nil).takeRetainedValue()
-                    ABAddressBookRequestAccessWithCompletion(addressBookRef, { (granted, error) in
-                        onMainThread {
-                            observer.onNext(granted)
-                            observer.onCompleted()
-                        }
-                    })
-                }
+                CNContactStore().requestAccess(for: CNEntityType.contacts, completionHandler: { (granted, error) in
+                    onMainThread {
+                        observer.onNext(granted)
+                        observer.onCompleted()
+                    }
+                })
             case .authorized:
                 observer.onNext(true)
                 observer.onCompleted()
