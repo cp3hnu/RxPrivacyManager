@@ -57,7 +57,7 @@ privacyPermission(for: PermissionType.camera, authorized: {
 
 ## Dependencies
 
-*   [RxSwift 4.3.1](https://github.com/ReactiveX/RxSwift)
+*   [RxSwift 4.4.2](https://github.com/ReactiveX/RxSwift)
 
 ## Requirements
 
