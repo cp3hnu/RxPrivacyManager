@@ -28,7 +28,9 @@ github "cp3hnu/PrivacyManager"
 -   Add Input files *$(SRCROOT)/Carthage/Build/iOS/PrivacyManager.framework*
 
 
+### Swift Package
 
+File -> Swift Packages -> Add Package Dependency,  then search rxprivacymanager.
 
 ## Usage
 
@@ -57,7 +59,7 @@ privacyPermission(for: PermissionType.camera, authorized: {
 
 ## Dependencies
 
-*   [RxSwift 4.4.2](https://github.com/ReactiveX/RxSwift)
+*   [RxSwift 5.0.0+](https://github.com/ReactiveX/RxSwift)
 
 ## Requirements
 
