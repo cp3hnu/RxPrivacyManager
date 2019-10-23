@@ -7,30 +7,35 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		354285C2235FEE0800F1056B /* Function.swift in Sources */ = {isa = PBXBuildFile; fileRef = 354285C1235FEE0800F1056B /* Function.swift */; };
-		354285C4235FEE4500F1056B /* PrivacyManager+Camera.swift in Sources */ = {isa = PBXBuildFile; fileRef = 354285C3235FEE4500F1056B /* PrivacyManager+Camera.swift */; };
-		354285CC235FF5A900F1056B /* PrivacyManager+Picture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 354285CB235FF5A900F1056B /* PrivacyManager+Picture.swift */; };
-		354285CE235FF5F300F1056B /* PrivacyManager+Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 354285CD235FF5F300F1056B /* PrivacyManager+Location.swift */; };
-		354285D0235FF64100F1056B /* PrivacyManager+Contact.swift in Sources */ = {isa = PBXBuildFile; fileRef = 354285CF235FF64100F1056B /* PrivacyManager+Contact.swift */; };
-		354285D2235FF68000F1056B /* PrivacyManager+Microphone.swift in Sources */ = {isa = PBXBuildFile; fileRef = 354285D1235FF68000F1056B /* PrivacyManager+Microphone.swift */; };
-		354285D82360025000F1056B /* RxCLLocationManagerDelegateProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 354285D62360025000F1056B /* RxCLLocationManagerDelegateProxy.swift */; };
-		354285D92360025000F1056B /* CLLocationManager+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 354285D72360025000F1056B /* CLLocationManager+Rx.swift */; };
-		354285DA236002A200F1056B /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 358BB7BC1EA2575500B1E07B /* RxCocoa.framework */; };
-		354285DB236002A200F1056B /* RxCocoa.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 358BB7BC1EA2575500B1E07B /* RxCocoa.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		35884C041EA2581E00FD4C26 /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 358BB7BC1EA2575500B1E07B /* RxCocoa.framework */; };
-		35884C051EA258C800FD4C26 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 358BB7BE1EA2575900B1E07B /* RxSwift.framework */; };
-		358BB7BF1EA2575900B1E07B /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 358BB7BE1EA2575900B1E07B /* RxSwift.framework */; };
-		35C728D61E9FB590000BC8CD /* UIViewController+PM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35C728D51E9FB590000BC8CD /* UIViewController+PM.swift */; };
+		354285EE2360256400F1056B /* PrivacyManager+Microphone.swift in Sources */ = {isa = PBXBuildFile; fileRef = 354285E02360256400F1056B /* PrivacyManager+Microphone.swift */; };
+		354285F02360256500F1056B /* UIViewController+PM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 354285E22360256400F1056B /* UIViewController+PM.swift */; };
+		354285F12360256500F1056B /* PrivacyManager+Contact.swift in Sources */ = {isa = PBXBuildFile; fileRef = 354285E32360256400F1056B /* PrivacyManager+Contact.swift */; };
+		354285F22360256500F1056B /* CLLocationManager+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 354285E52360256400F1056B /* CLLocationManager+Rx.swift */; };
+		354285F32360256500F1056B /* RxCLLocationManagerDelegateProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 354285E62360256400F1056B /* RxCLLocationManagerDelegateProxy.swift */; };
+		354285F42360256500F1056B /* PrivacyManager+Picture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 354285E72360256400F1056B /* PrivacyManager+Picture.swift */; };
+		354285F52360256500F1056B /* PrivacyManager+Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 354285E82360256400F1056B /* PrivacyManager+Location.swift */; };
+		354285F62360256500F1056B /* PrivacyManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 354285E92360256400F1056B /* PrivacyManager.swift */; };
+		354285F72360256500F1056B /* PrivacyManager+Camera.swift in Sources */ = {isa = PBXBuildFile; fileRef = 354285EA2360256400F1056B /* PrivacyManager+Camera.swift */; };
+		354285F82360256500F1056B /* Function.swift in Sources */ = {isa = PBXBuildFile; fileRef = 354285EB2360256400F1056B /* Function.swift */; };
+		354285FA2360256500F1056B /* Struct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 354285ED2360256400F1056B /* Struct.swift */; };
+		354285FC236029AD00F1056B /* PrivacyManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 354285E12360256400F1056B /* PrivacyManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		354285FD23602A4400F1056B /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 358BB7BC1EA2575500B1E07B /* RxCocoa.framework */; };
+		354285FE23602A4400F1056B /* RxCocoa.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 358BB7BC1EA2575500B1E07B /* RxCocoa.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		3542860023602A4700F1056B /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 358BB7BE1EA2575900B1E07B /* RxSwift.framework */; };
+		3542860123602A4700F1056B /* RxSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 358BB7BE1EA2575900B1E07B /* RxSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		3585A7DD23602DCC0010C37E /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 358BB7BC1EA2575500B1E07B /* RxCocoa.framework */; };
+		3585A7DE23602DCC0010C37E /* RxCocoa.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 358BB7BC1EA2575500B1E07B /* RxCocoa.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		3585A7DF23602DCE0010C37E /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 358BB7BE1EA2575900B1E07B /* RxSwift.framework */; };
+		3585A7E023602DCE0010C37E /* RxSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 358BB7BE1EA2575900B1E07B /* RxSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		3585A7E223602E040010C37E /* RxRelay.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3585A7E123602E040010C37E /* RxRelay.framework */; };
+		3585A7E323602E040010C37E /* RxRelay.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 3585A7E123602E040010C37E /* RxRelay.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		DB85E2651E9F227100AFAFE3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB85E2641E9F227100AFAFE3 /* AppDelegate.swift */; };
 		DB85E2671E9F227100AFAFE3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB85E2661E9F227100AFAFE3 /* ViewController.swift */; };
 		DB85E26A1E9F227100AFAFE3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DB85E2681E9F227100AFAFE3 /* Main.storyboard */; };
 		DB85E26C1E9F227100AFAFE3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DB85E26B1E9F227100AFAFE3 /* Assets.xcassets */; };
 		DB85E26F1E9F227100AFAFE3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DB85E26D1E9F227100AFAFE3 /* LaunchScreen.storyboard */; };
-		DB85E27E1E9F228500AFAFE3 /* PrivacyManager.h in Headers */ = {isa = PBXBuildFile; fileRef = DB85E27D1E9F228500AFAFE3 /* PrivacyManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		DB85E2821E9F228500AFAFE3 /* PrivacyManager.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB85E27B1E9F228500AFAFE3 /* PrivacyManager.framework */; };
 		DB85E2831E9F228500AFAFE3 /* PrivacyManager.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = DB85E27B1E9F228500AFAFE3 /* PrivacyManager.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		DB85E29E1E9F4B8E00AFAFE3 /* PrivacyManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB85E29C1E9F4B8E00AFAFE3 /* PrivacyManager.swift */; };
-		DB85E29F1E9F4B8E00AFAFE3 /* Struct.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB85E29D1E9F4B8E00AFAFE3 /* Struct.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,13 +49,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		354285DC236002A200F1056B /* Embed Frameworks */ = {
+		354285FF23602A4400F1056B /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				354285DB236002A200F1056B /* RxCocoa.framework in Embed Frameworks */,
+				3542860123602A4700F1056B /* RxSwift.framework in Embed Frameworks */,
+				354285FE23602A4400F1056B /* RxCocoa.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -61,7 +67,10 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				3585A7E323602E040010C37E /* RxRelay.framework in Embed Frameworks */,
+				3585A7DE23602DCC0010C37E /* RxCocoa.framework in Embed Frameworks */,
 				DB85E2831E9F228500AFAFE3 /* PrivacyManager.framework in Embed Frameworks */,
+				3585A7E023602DCE0010C37E /* RxSwift.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -69,18 +78,23 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		354285C1235FEE0800F1056B /* Function.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Function.swift; sourceTree = "<group>"; };
-		354285C3235FEE4500F1056B /* PrivacyManager+Camera.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PrivacyManager+Camera.swift"; sourceTree = "<group>"; };
-		354285CB235FF5A900F1056B /* PrivacyManager+Picture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PrivacyManager+Picture.swift"; sourceTree = "<group>"; };
-		354285CD235FF5F300F1056B /* PrivacyManager+Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PrivacyManager+Location.swift"; sourceTree = "<group>"; };
-		354285CF235FF64100F1056B /* PrivacyManager+Contact.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PrivacyManager+Contact.swift"; sourceTree = "<group>"; };
-		354285D1235FF68000F1056B /* PrivacyManager+Microphone.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PrivacyManager+Microphone.swift"; sourceTree = "<group>"; };
 		354285D3235FFA1500F1056B /* Package.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Package.swift; path = ../Package.swift; sourceTree = "<group>"; };
-		354285D62360025000F1056B /* RxCLLocationManagerDelegateProxy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RxCLLocationManagerDelegateProxy.swift; sourceTree = "<group>"; };
-		354285D72360025000F1056B /* CLLocationManager+Rx.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CLLocationManager+Rx.swift"; sourceTree = "<group>"; };
+		354285E02360256400F1056B /* PrivacyManager+Microphone.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "PrivacyManager+Microphone.swift"; sourceTree = "<group>"; };
+		354285E12360256400F1056B /* PrivacyManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrivacyManager.h; sourceTree = "<group>"; };
+		354285E22360256400F1056B /* UIViewController+PM.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+PM.swift"; sourceTree = "<group>"; };
+		354285E32360256400F1056B /* PrivacyManager+Contact.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "PrivacyManager+Contact.swift"; sourceTree = "<group>"; };
+		354285E52360256400F1056B /* CLLocationManager+Rx.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CLLocationManager+Rx.swift"; sourceTree = "<group>"; };
+		354285E62360256400F1056B /* RxCLLocationManagerDelegateProxy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RxCLLocationManagerDelegateProxy.swift; sourceTree = "<group>"; };
+		354285E72360256400F1056B /* PrivacyManager+Picture.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "PrivacyManager+Picture.swift"; sourceTree = "<group>"; };
+		354285E82360256400F1056B /* PrivacyManager+Location.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "PrivacyManager+Location.swift"; sourceTree = "<group>"; };
+		354285E92360256400F1056B /* PrivacyManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PrivacyManager.swift; sourceTree = "<group>"; };
+		354285EA2360256400F1056B /* PrivacyManager+Camera.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "PrivacyManager+Camera.swift"; sourceTree = "<group>"; };
+		354285EB2360256400F1056B /* Function.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Function.swift; sourceTree = "<group>"; };
+		354285EC2360256400F1056B /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		354285ED2360256400F1056B /* Struct.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Struct.swift; sourceTree = "<group>"; };
+		3585A7E123602E040010C37E /* RxRelay.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxRelay.framework; path = ../Carthage/Build/iOS/RxRelay.framework; sourceTree = "<group>"; };
 		358BB7BC1EA2575500B1E07B /* RxCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxCocoa.framework; path = ../Carthage/Build/iOS/RxCocoa.framework; sourceTree = "<group>"; };
 		358BB7BE1EA2575900B1E07B /* RxSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwift.framework; path = ../Carthage/Build/iOS/RxSwift.framework; sourceTree = "<group>"; };
-		35C728D51E9FB590000BC8CD /* UIViewController+PM.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+PM.swift"; sourceTree = "<group>"; };
 		DB85E2611E9F227100AFAFE3 /* PrivacyManagerDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PrivacyManagerDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DB85E2641E9F227100AFAFE3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DB85E2661E9F227100AFAFE3 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -89,10 +103,6 @@
 		DB85E26E1E9F227100AFAFE3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DB85E2701E9F227100AFAFE3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DB85E27B1E9F228500AFAFE3 /* PrivacyManager.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = PrivacyManager.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		DB85E27D1E9F228500AFAFE3 /* PrivacyManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrivacyManager.h; sourceTree = "<group>"; };
-		DB85E27F1E9F228500AFAFE3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		DB85E29C1E9F4B8E00AFAFE3 /* PrivacyManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PrivacyManager.swift; sourceTree = "<group>"; };
-		DB85E29D1E9F4B8E00AFAFE3 /* Struct.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Struct.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,9 +110,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3585A7E223602E040010C37E /* RxRelay.framework in Frameworks */,
+				3585A7DD23602DCC0010C37E /* RxCocoa.framework in Frameworks */,
 				DB85E2821E9F228500AFAFE3 /* PrivacyManager.framework in Frameworks */,
-				358BB7BF1EA2575900B1E07B /* RxSwift.framework in Frameworks */,
-				35884C041EA2581E00FD4C26 /* RxCocoa.framework in Frameworks */,
+				3585A7DF23602DCE0010C37E /* RxSwift.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -110,19 +121,39 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				354285DA236002A200F1056B /* RxCocoa.framework in Frameworks */,
-				35884C051EA258C800FD4C26 /* RxSwift.framework in Frameworks */,
+				3542860023602A4700F1056B /* RxSwift.framework in Frameworks */,
+				354285FD23602A4400F1056B /* RxCocoa.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		354285CA235FF53200F1056B /* Extensions */ = {
+		354285DF2360256400F1056B /* PrivacyManager */ = {
 			isa = PBXGroup;
 			children = (
-				354285D72360025000F1056B /* CLLocationManager+Rx.swift */,
-				354285D62360025000F1056B /* RxCLLocationManagerDelegateProxy.swift */,
+				354285EC2360256400F1056B /* Info.plist */,
+				354285E12360256400F1056B /* PrivacyManager.h */,
+				354285ED2360256400F1056B /* Struct.swift */,
+				354285EB2360256400F1056B /* Function.swift */,
+				354285E92360256400F1056B /* PrivacyManager.swift */,
+				354285E22360256400F1056B /* UIViewController+PM.swift */,
+				354285E32360256400F1056B /* PrivacyManager+Contact.swift */,
+				354285E72360256400F1056B /* PrivacyManager+Picture.swift */,
+				354285E82360256400F1056B /* PrivacyManager+Location.swift */,
+				354285EA2360256400F1056B /* PrivacyManager+Camera.swift */,
+				354285E02360256400F1056B /* PrivacyManager+Microphone.swift */,
+				354285E42360256400F1056B /* Extensions */,
+			);
+			name = PrivacyManager;
+			path = ../PrivacyManager;
+			sourceTree = "<group>";
+		};
+		354285E42360256400F1056B /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				354285E52360256400F1056B /* CLLocationManager+Rx.swift */,
+				354285E62360256400F1056B /* RxCLLocationManagerDelegateProxy.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -130,6 +161,7 @@
 		35C728D71E9FB9AC000BC8CD /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				3585A7E123602E040010C37E /* RxRelay.framework */,
 				358BB7BE1EA2575900B1E07B /* RxSwift.framework */,
 				358BB7BC1EA2575500B1E07B /* RxCocoa.framework */,
 			);
@@ -140,8 +172,8 @@
 			isa = PBXGroup;
 			children = (
 				354285D3235FFA1500F1056B /* Package.swift */,
+				354285DF2360256400F1056B /* PrivacyManager */,
 				DB85E2631E9F227100AFAFE3 /* PrivacyManagerDemo */,
-				DB85E27C1E9F228500AFAFE3 /* PrivacyManager */,
 				DB85E2621E9F227100AFAFE3 /* Products */,
 				35C728D71E9FB9AC000BC8CD /* Frameworks */,
 			);
@@ -169,25 +201,6 @@
 			path = PrivacyManagerDemo;
 			sourceTree = "<group>";
 		};
-		DB85E27C1E9F228500AFAFE3 /* PrivacyManager */ = {
-			isa = PBXGroup;
-			children = (
-				DB85E27D1E9F228500AFAFE3 /* PrivacyManager.h */,
-				DB85E27F1E9F228500AFAFE3 /* Info.plist */,
-				DB85E29D1E9F4B8E00AFAFE3 /* Struct.swift */,
-				354285C1235FEE0800F1056B /* Function.swift */,
-				DB85E29C1E9F4B8E00AFAFE3 /* PrivacyManager.swift */,
-				354285CF235FF64100F1056B /* PrivacyManager+Contact.swift */,
-				354285C3235FEE4500F1056B /* PrivacyManager+Camera.swift */,
-				354285CB235FF5A900F1056B /* PrivacyManager+Picture.swift */,
-				354285CD235FF5F300F1056B /* PrivacyManager+Location.swift */,
-				354285D1235FF68000F1056B /* PrivacyManager+Microphone.swift */,
-				35C728D51E9FB590000BC8CD /* UIViewController+PM.swift */,
-				354285CA235FF53200F1056B /* Extensions */,
-			);
-			path = PrivacyManager;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -195,7 +208,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DB85E27E1E9F228500AFAFE3 /* PrivacyManager.h in Headers */,
+				354285FC236029AD00F1056B /* PrivacyManager.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -230,7 +243,7 @@
 				DB85E2771E9F228500AFAFE3 /* Frameworks */,
 				DB85E2781E9F228500AFAFE3 /* Headers */,
 				DB85E2791E9F228500AFAFE3 /* Resources */,
-				354285DC236002A200F1056B /* Embed Frameworks */,
+				354285FF23602A4400F1056B /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -315,7 +328,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "/usr/local/bin/carthage copy-frameworks";
+			shellScript = "/usr/local/bin/carthage copy-frameworks\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -333,17 +346,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DB85E29F1E9F4B8E00AFAFE3 /* Struct.swift in Sources */,
-				354285D92360025000F1056B /* CLLocationManager+Rx.swift in Sources */,
-				354285CE235FF5F300F1056B /* PrivacyManager+Location.swift in Sources */,
-				DB85E29E1E9F4B8E00AFAFE3 /* PrivacyManager.swift in Sources */,
-				354285D82360025000F1056B /* RxCLLocationManagerDelegateProxy.swift in Sources */,
-				354285C4235FEE4500F1056B /* PrivacyManager+Camera.swift in Sources */,
-				35C728D61E9FB590000BC8CD /* UIViewController+PM.swift in Sources */,
-				354285C2235FEE0800F1056B /* Function.swift in Sources */,
-				354285D2235FF68000F1056B /* PrivacyManager+Microphone.swift in Sources */,
-				354285CC235FF5A900F1056B /* PrivacyManager+Picture.swift in Sources */,
-				354285D0235FF64100F1056B /* PrivacyManager+Contact.swift in Sources */,
+				354285F62360256500F1056B /* PrivacyManager.swift in Sources */,
+				354285F52360256500F1056B /* PrivacyManager+Location.swift in Sources */,
+				354285F72360256500F1056B /* PrivacyManager+Camera.swift in Sources */,
+				354285F12360256500F1056B /* PrivacyManager+Contact.swift in Sources */,
+				354285F22360256500F1056B /* CLLocationManager+Rx.swift in Sources */,
+				354285EE2360256400F1056B /* PrivacyManager+Microphone.swift in Sources */,
+				354285F32360256500F1056B /* RxCLLocationManagerDelegateProxy.swift in Sources */,
+				354285F02360256500F1056B /* UIViewController+PM.swift in Sources */,
+				354285F42360256500F1056B /* PrivacyManager+Picture.swift in Sources */,
+				354285F82360256500F1056B /* Function.swift in Sources */,
+				354285FA2360256500F1056B /* Struct.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -533,7 +546,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/../Carthage/Build/iOS",
 				);
-				INFOPLIST_FILE = PrivacyManager/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/../PrivacyManager/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -563,7 +576,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/../Carthage/Build/iOS",
 				);
-				INFOPLIST_FILE = PrivacyManager/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/../PrivacyManager/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
