@@ -16,6 +16,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // MARK: - 获取状态
         let locationStatus = PrivacyManager.shared.locationStatus
         print("locationStatus = ", locationStatus)
         
@@ -32,6 +33,7 @@ class ViewController: UIViewController {
         print("contactStatus = ", contactStatus)
         
     
+        // MARK: - UIViewController 请求权限 - 使用 UIViewcontroller 扩展方法 `privacyPermission`
         DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
             self.privacyPermission(for: PermissionType.locationInUse, authorized: { [weak self] in
                 self?.present("定位服务已授权")
@@ -83,6 +85,7 @@ class ViewController: UIViewController {
         )
         
     
+        // MARK: - 使用 PrivacyManager 的 observable
         let button4 = UIButton()
         button4.setTitle("通讯录", for: .normal)
         button4.setTitleColor(UIColor.black, for: .normal)

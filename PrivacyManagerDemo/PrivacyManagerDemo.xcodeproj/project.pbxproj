@@ -7,13 +7,20 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		354285C2235FEE0800F1056B /* Function.swift in Sources */ = {isa = PBXBuildFile; fileRef = 354285C1235FEE0800F1056B /* Function.swift */; };
+		354285C4235FEE4500F1056B /* PrivacyManager+Camera.swift in Sources */ = {isa = PBXBuildFile; fileRef = 354285C3235FEE4500F1056B /* PrivacyManager+Camera.swift */; };
+		354285CC235FF5A900F1056B /* PrivacyManager+Picture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 354285CB235FF5A900F1056B /* PrivacyManager+Picture.swift */; };
+		354285CE235FF5F300F1056B /* PrivacyManager+Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 354285CD235FF5F300F1056B /* PrivacyManager+Location.swift */; };
+		354285D0235FF64100F1056B /* PrivacyManager+Contact.swift in Sources */ = {isa = PBXBuildFile; fileRef = 354285CF235FF64100F1056B /* PrivacyManager+Contact.swift */; };
+		354285D2235FF68000F1056B /* PrivacyManager+Microphone.swift in Sources */ = {isa = PBXBuildFile; fileRef = 354285D1235FF68000F1056B /* PrivacyManager+Microphone.swift */; };
+		354285D82360025000F1056B /* RxCLLocationManagerDelegateProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 354285D62360025000F1056B /* RxCLLocationManagerDelegateProxy.swift */; };
+		354285D92360025000F1056B /* CLLocationManager+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 354285D72360025000F1056B /* CLLocationManager+Rx.swift */; };
+		354285DA236002A200F1056B /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 358BB7BC1EA2575500B1E07B /* RxCocoa.framework */; };
+		354285DB236002A200F1056B /* RxCocoa.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 358BB7BC1EA2575500B1E07B /* RxCocoa.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		35884C041EA2581E00FD4C26 /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 358BB7BC1EA2575500B1E07B /* RxCocoa.framework */; };
 		35884C051EA258C800FD4C26 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 358BB7BE1EA2575900B1E07B /* RxSwift.framework */; };
-		35884C061EA258CB00FD4C26 /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 358BB7BC1EA2575500B1E07B /* RxCocoa.framework */; };
 		358BB7BF1EA2575900B1E07B /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 358BB7BE1EA2575900B1E07B /* RxSwift.framework */; };
-		35C728D61E9FB590000BC8CD /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35C728D51E9FB590000BC8CD /* UIViewController.swift */; };
-		DB7725D91FF1E36600F469A0 /* CLLocationManager+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB7725D71FF1E36600F469A0 /* CLLocationManager+Rx.swift */; };
-		DB7725DA1FF1E36600F469A0 /* RxCLLocationManagerDelegateProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB7725D81FF1E36600F469A0 /* RxCLLocationManagerDelegateProxy.swift */; };
+		35C728D61E9FB590000BC8CD /* UIViewController+PM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35C728D51E9FB590000BC8CD /* UIViewController+PM.swift */; };
 		DB85E2651E9F227100AFAFE3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB85E2641E9F227100AFAFE3 /* AppDelegate.swift */; };
 		DB85E2671E9F227100AFAFE3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB85E2661E9F227100AFAFE3 /* ViewController.swift */; };
 		DB85E26A1E9F227100AFAFE3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DB85E2681E9F227100AFAFE3 /* Main.storyboard */; };
@@ -37,6 +44,17 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
+		354285DC236002A200F1056B /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				354285DB236002A200F1056B /* RxCocoa.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		DB85E2871E9F228500AFAFE3 /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -51,11 +69,18 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		354285C1235FEE0800F1056B /* Function.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Function.swift; sourceTree = "<group>"; };
+		354285C3235FEE4500F1056B /* PrivacyManager+Camera.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PrivacyManager+Camera.swift"; sourceTree = "<group>"; };
+		354285CB235FF5A900F1056B /* PrivacyManager+Picture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PrivacyManager+Picture.swift"; sourceTree = "<group>"; };
+		354285CD235FF5F300F1056B /* PrivacyManager+Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PrivacyManager+Location.swift"; sourceTree = "<group>"; };
+		354285CF235FF64100F1056B /* PrivacyManager+Contact.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PrivacyManager+Contact.swift"; sourceTree = "<group>"; };
+		354285D1235FF68000F1056B /* PrivacyManager+Microphone.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PrivacyManager+Microphone.swift"; sourceTree = "<group>"; };
+		354285D3235FFA1500F1056B /* Package.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Package.swift; path = ../Package.swift; sourceTree = "<group>"; };
+		354285D62360025000F1056B /* RxCLLocationManagerDelegateProxy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RxCLLocationManagerDelegateProxy.swift; sourceTree = "<group>"; };
+		354285D72360025000F1056B /* CLLocationManager+Rx.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CLLocationManager+Rx.swift"; sourceTree = "<group>"; };
 		358BB7BC1EA2575500B1E07B /* RxCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxCocoa.framework; path = ../Carthage/Build/iOS/RxCocoa.framework; sourceTree = "<group>"; };
 		358BB7BE1EA2575900B1E07B /* RxSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwift.framework; path = ../Carthage/Build/iOS/RxSwift.framework; sourceTree = "<group>"; };
-		35C728D51E9FB590000BC8CD /* UIViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
-		DB7725D71FF1E36600F469A0 /* CLLocationManager+Rx.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "CLLocationManager+Rx.swift"; path = "../../Carthage/Checkouts/RxSwift/RxExample/Extensions/CLLocationManager+Rx.swift"; sourceTree = "<group>"; };
-		DB7725D81FF1E36600F469A0 /* RxCLLocationManagerDelegateProxy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RxCLLocationManagerDelegateProxy.swift; path = ../../Carthage/Checkouts/RxSwift/RxExample/Extensions/RxCLLocationManagerDelegateProxy.swift; sourceTree = "<group>"; };
+		35C728D51E9FB590000BC8CD /* UIViewController+PM.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+PM.swift"; sourceTree = "<group>"; };
 		DB85E2611E9F227100AFAFE3 /* PrivacyManagerDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PrivacyManagerDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DB85E2641E9F227100AFAFE3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DB85E2661E9F227100AFAFE3 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -85,14 +110,23 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				354285DA236002A200F1056B /* RxCocoa.framework in Frameworks */,
 				35884C051EA258C800FD4C26 /* RxSwift.framework in Frameworks */,
-				35884C061EA258CB00FD4C26 /* RxCocoa.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		354285CA235FF53200F1056B /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				354285D72360025000F1056B /* CLLocationManager+Rx.swift */,
+				354285D62360025000F1056B /* RxCLLocationManagerDelegateProxy.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		35C728D71E9FB9AC000BC8CD /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -105,6 +139,7 @@
 		DB85E2581E9F227100AFAFE3 = {
 			isa = PBXGroup;
 			children = (
+				354285D3235FFA1500F1056B /* Package.swift */,
 				DB85E2631E9F227100AFAFE3 /* PrivacyManagerDemo */,
 				DB85E27C1E9F228500AFAFE3 /* PrivacyManager */,
 				DB85E2621E9F227100AFAFE3 /* Products */,
@@ -138,12 +173,17 @@
 			isa = PBXGroup;
 			children = (
 				DB85E27D1E9F228500AFAFE3 /* PrivacyManager.h */,
-				DB85E29C1E9F4B8E00AFAFE3 /* PrivacyManager.swift */,
-				DB85E29D1E9F4B8E00AFAFE3 /* Struct.swift */,
-				35C728D51E9FB590000BC8CD /* UIViewController.swift */,
-				DB7725D71FF1E36600F469A0 /* CLLocationManager+Rx.swift */,
-				DB7725D81FF1E36600F469A0 /* RxCLLocationManagerDelegateProxy.swift */,
 				DB85E27F1E9F228500AFAFE3 /* Info.plist */,
+				DB85E29D1E9F4B8E00AFAFE3 /* Struct.swift */,
+				354285C1235FEE0800F1056B /* Function.swift */,
+				DB85E29C1E9F4B8E00AFAFE3 /* PrivacyManager.swift */,
+				354285CF235FF64100F1056B /* PrivacyManager+Contact.swift */,
+				354285C3235FEE4500F1056B /* PrivacyManager+Camera.swift */,
+				354285CB235FF5A900F1056B /* PrivacyManager+Picture.swift */,
+				354285CD235FF5F300F1056B /* PrivacyManager+Location.swift */,
+				354285D1235FF68000F1056B /* PrivacyManager+Microphone.swift */,
+				35C728D51E9FB590000BC8CD /* UIViewController+PM.swift */,
+				354285CA235FF53200F1056B /* Extensions */,
 			);
 			path = PrivacyManager;
 			sourceTree = "<group>";
@@ -190,6 +230,7 @@
 				DB85E2771E9F228500AFAFE3 /* Frameworks */,
 				DB85E2781E9F228500AFAFE3 /* Headers */,
 				DB85E2791E9F228500AFAFE3 /* Resources */,
+				354285DC236002A200F1056B /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -293,10 +334,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				DB85E29F1E9F4B8E00AFAFE3 /* Struct.swift in Sources */,
-				DB7725D91FF1E36600F469A0 /* CLLocationManager+Rx.swift in Sources */,
+				354285D92360025000F1056B /* CLLocationManager+Rx.swift in Sources */,
+				354285CE235FF5F300F1056B /* PrivacyManager+Location.swift in Sources */,
 				DB85E29E1E9F4B8E00AFAFE3 /* PrivacyManager.swift in Sources */,
-				DB7725DA1FF1E36600F469A0 /* RxCLLocationManagerDelegateProxy.swift in Sources */,
-				35C728D61E9FB590000BC8CD /* UIViewController.swift in Sources */,
+				354285D82360025000F1056B /* RxCLLocationManagerDelegateProxy.swift in Sources */,
+				354285C4235FEE4500F1056B /* PrivacyManager+Camera.swift in Sources */,
+				35C728D61E9FB590000BC8CD /* UIViewController+PM.swift in Sources */,
+				354285C2235FEE0800F1056B /* Function.swift in Sources */,
+				354285D2235FF68000F1056B /* PrivacyManager+Microphone.swift in Sources */,
+				354285CC235FF5A900F1056B /* PrivacyManager+Picture.swift in Sources */,
+				354285D0235FF64100F1056B /* PrivacyManager+Contact.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -449,6 +496,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.datayp.PrivacyManagerDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -467,6 +515,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.datayp.PrivacyManagerDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -488,6 +537,7 @@
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MARKETING_VERSION = 4.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.datayp.PrivacyManager;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -517,6 +567,7 @@
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MARKETING_VERSION = 4.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.datayp.PrivacyManager;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
