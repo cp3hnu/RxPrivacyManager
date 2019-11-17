@@ -10,7 +10,7 @@ let package = Package(
     ],
     products: [
         .library(name: "PrivacyManager", targets: ["PrivacyManager"])
-        .library(name: "PrivacyPhoto", targets: ["PrivacyManager"])
+        .library(name: "PrivacyPhoto", targets: ["PrivacyPhoto"])
         .library(name: "PrivacyCamera", targets: ["PrivacyCamera"])
         .library(name: "PrivacyContact", targets: ["PrivacyContact"])
         .library(name: "PrivacyMicrophone", targets: ["PrivacyMicrophone"])
