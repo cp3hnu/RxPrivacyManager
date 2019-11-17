@@ -14,7 +14,7 @@ let package = Package(
         .library(name: "PrivacyCamera", targets: ["PrivacyCamera"]),
         .library(name: "PrivacyContact", targets: ["PrivacyContact"]),
         .library(name: "PrivacyMicrophone", targets: ["PrivacyMicrophone"]),
-        .library(name: "PrivacyLocation", targets: ["PrivacyLocation"])
+        .library(name: "PrivacyLocation", targets: ["PrivacyLocation"]),
     ],
     dependencies: [
         .package(url: "https://github.com/ReactiveX/RxSwift.git", .upToNextMajor(from: "5.0.0")),
@@ -25,7 +25,7 @@ let package = Package(
         .target(name: "PrivacyCamera", dependencies: ["RxSwift", "PrivacyManager"], path: "PrivacyCamera"),
         .target(name: "PrivacyContact", dependencies: ["RxSwift", "PrivacyManager"], path: "PrivacyContact"),
         .target(name: "PrivacyMicrophone", dependencies: ["RxSwift", "PrivacyManager"], path: "PrivacyMicrophone"),
-        .target(name: "PrivacyLocation", dependencies: ["RxSwift", "RxCocoa", "PrivacyManager"], path: "PrivacyLocation")
+        .target(name: "PrivacyLocation", dependencies: ["RxSwift", "RxCocoa", "PrivacyManager"], path: "PrivacyLocation"),
     ],
     swiftLanguageVersions: [.v5]
 )
