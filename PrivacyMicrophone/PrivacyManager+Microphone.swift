@@ -9,6 +9,7 @@
 import Foundation
 import RxSwift
 import AVFoundation
+import PrivacyManager
 
 /// Microphone
 public extension PrivacyManager {
@@ -47,5 +48,10 @@ public extension PrivacyManager {
             
             return Disposables.create()
         }
+    }
+    
+    /// Present alert view controller for microphone
+    func privacyMicrophonePermission(desc: String? = nil, presenting: UIViewController, authorized authorizedAction: @escaping PrivacyClosure, canceled cancelAction: PrivacyClosure? = nil, setting settingAction: PrivacyClosure? = nil) {
+        return privacyPermission(type: PermissionType.microphone, rxPersission: rxMicrophonePermission, desc: desc, presenting: presenting, authorized: authorizedAction, canceled: cancelAction, setting: settingAction)
     }
 }

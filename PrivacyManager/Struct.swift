@@ -10,21 +10,21 @@ import Foundation
 
 /// 类型
 public enum PermissionType: Int, CustomStringConvertible {
-    case contacts
+    case contact
     case locationAlways
     case locationInUse
     case microphone
     case camera
-    case photos
+    case photo
     
     public var description: String {
         switch self {
-        case .contacts:         return "通讯录"
+        case .contact:         return "通讯录"
         case .locationAlways:   return "位置"
         case .locationInUse:    return "位置"
         case .microphone:       return "麦克风"
         case .camera:           return "相机"
-        case .photos:           return "照片"
+        case .photo:           return "照片"
         }
     }
 }

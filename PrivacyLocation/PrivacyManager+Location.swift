@@ -9,9 +9,25 @@
 import Foundation
 import RxSwift
 import CoreLocation
+import PrivacyManager
+
+class LocationManager {
+    static let shared = LocationManager()
+    let locationManager: CLLocationManager
+    
+    init() {
+       locationManager = CLLocationManager()
+       locationManager.distanceFilter = 100
+       locationManager.desiredAccuracy = kCLLocationAccuracyBest
+    }
+}
 
 /// Location
 public extension PrivacyManager {
+    var locationManager: CLLocationManager {
+        LocationManager.shared.locationManager
+    }
+    
     /// 获取定位访问权限的状态
     var locationStatus: PermissionStatus {
         let status = CLLocationManager.authorizationStatus()
@@ -66,7 +82,7 @@ public extension PrivacyManager {
     }
     
     /// 请求定位访问权限
-    func requestLocation(always: Bool) {
+    private func requestLocation(always: Bool) {
         if always {
             locationManager.requestAlwaysAuthorization()
         } else {
@@ -84,5 +100,16 @@ public extension PrivacyManager {
     /// 停止更新位置
     func stopUpdatingLocation() {
         locationManager.stopUpdatingLocation()
+    }
+    
+    /// Present alert view controller for location
+    func privacyLoactionPermission(always: Bool, desc: String? = nil, presenting: UIViewController, authorized authorizedAction: @escaping PrivacyClosure, canceled cancelAction: PrivacyClosure? = nil, setting settingAction: PrivacyClosure? = nil) {
+        
+        let observable: Observable<Bool> = rxLocationPermission(always: true)
+            .filter{ $0 != .unknown }
+            .map{ $0 == .authorized }
+        let type: PermissionType = always ? .locationAlways : .locationInUse
+        
+        return privacyPermission(type: type, rxPersission: observable, desc: desc, presenting: presenting, authorized: authorizedAction, canceled: cancelAction, setting: settingAction)
     }
 }

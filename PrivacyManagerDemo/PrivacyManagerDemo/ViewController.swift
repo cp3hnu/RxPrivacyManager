@@ -8,8 +8,13 @@
 
 import UIKit
 import RxSwift
-import PrivacyManager
 import CoreLocation
+import PrivacyManager
+import PrivacyPhoto
+import PrivacyCamera
+import PrivacyMicrophone
+import PrivacyContact
+import PrivacyLocation
 
 class ViewController: UIViewController {
 
@@ -35,8 +40,8 @@ class ViewController: UIViewController {
     
         // MARK: - UIViewController 请求权限 - 使用 UIViewcontroller 扩展方法 `privacyPermission`
         DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
-            self.privacyPermission(for: PermissionType.locationInUse, authorized: { [weak self] in
-                self?.present("定位服务已授权")
+            PrivacyManager.shared.privacyLoactionPermission(always: false, presenting: self, authorized: {
+                self.present("定位服务已授权")
             })
         }
         
@@ -58,7 +63,9 @@ class ViewController: UIViewController {
         button1.setTitleColor(UIColor.black, for: .normal)
         _ = button1.rx.tap.subscribe(
             onNext: { [weak self] _ in
-                self?.privacyPermission(for: PermissionType.camera, authorized: { self?.present("相机已授权")
+                guard let self = self else { return }
+                PrivacyManager.shared.privacyCameraPermission(presenting: self, authorized: {
+                    self.present("相机已授权")
                 })
             }
         )
@@ -68,7 +75,9 @@ class ViewController: UIViewController {
         button2.setTitleColor(UIColor.black, for: .normal)
         _ = button2.rx.tap.subscribe(
             onNext: { [weak self] _ in
-                self?.privacyPermission(for: PermissionType.photos, authorized: { self?.present("照片已授权")
+                guard let self = self else { return }
+                PrivacyManager.shared.privacyPhotoPermission(presenting: self, authorized: {
+                    self.present("照片已授权")
                 })
             }
         )
@@ -79,7 +88,10 @@ class ViewController: UIViewController {
         button3.setTitleColor(UIColor.black, for: .normal)
         _ = button3.rx.tap.subscribe(
             onNext: { [weak self] _ in
-                self?.privacyPermission(for: PermissionType.microphone, authorized: { self?.present("麦克风已授权")
+                guard let self = self else { return }
+                
+                PrivacyManager.shared.privacyMicrophonePermission(presenting: self, authorized: {
+                    self.present("麦克风已授权")
                 })
             }
         )
@@ -96,7 +108,7 @@ class ViewController: UIViewController {
             .subscribe(
                 onNext: { [weak self] granted in
                     if !granted {
-                        self?.presentPrivacySetting(type: PermissionType.contacts)
+                        self?.presentPrivacySetting(type: PermissionType.contact)
                     } else {
                         self?.present("通讯录已授权")
                     }

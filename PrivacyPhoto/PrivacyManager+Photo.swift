@@ -1,5 +1,5 @@
 //
-//  PrivacyManager+Picture.swift
+//  PrivacyManager+Photo.swift
 //  PrivacyManager
 //
 //  Created by CP3 on 10/23/19.
@@ -9,8 +9,9 @@
 import Foundation
 import RxSwift
 import Photos
+import PrivacyManager
 
-/// Picture
+/// Photo
 public extension PrivacyManager {
     /// 获取照片访问权限的状态
     var photosStatus: PermissionStatus {
@@ -51,5 +52,10 @@ public extension PrivacyManager {
             
             return Disposables.create()
         }
+    }
+    
+    /// Present alert view controller for photo
+    func privacyPhotoPermission(desc: String? = nil, presenting: UIViewController, authorized authorizedAction: @escaping PrivacyClosure, canceled cancelAction: PrivacyClosure? = nil, setting settingAction: PrivacyClosure? = nil) {
+        return privacyPermission(type: PermissionType.photo, rxPersission: rxPhotosPermission, desc: desc, presenting: presenting, authorized: authorizedAction, canceled: cancelAction, setting: settingAction)
     }
 }

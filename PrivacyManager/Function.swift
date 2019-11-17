@@ -8,7 +8,7 @@
 
 import Foundation
 
-func onMainThread(_ closure: @escaping () -> Void) {
+public func onMainThread(_ closure: @escaping () -> Void) {
     DispatchQueue.main.async {
         closure()
     }

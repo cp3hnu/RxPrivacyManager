@@ -9,6 +9,7 @@
 import Foundation
 import RxSwift
 import Contacts
+import PrivacyManager
 
 /// Contact
 public extension PrivacyManager {
@@ -51,5 +52,10 @@ public extension PrivacyManager {
             
             return Disposables.create()
         }
+    }
+    
+    /// Present alert view controller for contact
+    func privacyContactPermission(desc: String? = nil, presenting: UIViewController, authorized authorizedAction: @escaping PrivacyClosure, canceled cancelAction: PrivacyClosure? = nil, setting settingAction: PrivacyClosure? = nil) {
+        return privacyPermission(type: PermissionType.contact, rxPersission: rxContactPermission, desc: desc, presenting: presenting, authorized: authorizedAction, canceled: cancelAction, setting: settingAction)
     }
 }
