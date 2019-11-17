@@ -18,14 +18,19 @@ Currently supported:
 github "cp3hnu/PrivacyManager"
 ```
 
--   Drag and drop *PrivacyManager.framework* from /Carthage/Build/iOS/ to *Linked Frameworks and Libraries* in Xcode (Project>Target>General>Linked Frameworks and Libraries)
+-   Drag and drop *PrivacyManager.framework*, *PrivacyPhoto.framework* from /Carthage/Build/iOS/ to *Linked Frameworks and Libraries* in Xcode (Project>Target>General>Linked Frameworks and Libraries)
 -   Add new run script
 
 ```ruby
-  /usr/local/bin/carthage copy-frameworks
+/usr/local/bin/carthage copy-frameworks
 ```
 
--   Add Input files *$(SRCROOT)/Carthage/Build/iOS/PrivacyManager.framework*
+-   Add Input files
+
+```sh
+$(SRCROOT)/Carthage/Build/iOS/PrivacyManager.framework
+$(SRCROOT)/Carthage/Build/iOS/PrivacyPhoto.framework
+```
 
 
 ### Swift Package
@@ -34,12 +39,12 @@ File -> Swift Packages -> Add Package Dependency,  then search rxprivacymanager.
 
 ## Usage
 
-**It's so easy!** Just a function call
+**It's so easy!!!**  Just a function call
 
 ```swift
 // In UIViewController and subclasses
-privacyPermission(for: PermissionType.camera, authorized: {
-	// Picker photos
+PrivacyManager.shared.privacyCameraPermission(presenting: self, authorized: {
+  self.present("相机已授权")
 })
 ```
 
@@ -66,10 +71,6 @@ privacyPermission(for: PermissionType.camera, authorized: {
 -   Swift 5.0
 -   Xcode 10.0
 -   iOS 9+
-
-## Others
-
-[Carthage-and-nested-frameworks](http://stylekit.org/blog/2017/02/03/Carthage-and-nested-frameworks/)
 
 ## License
 
