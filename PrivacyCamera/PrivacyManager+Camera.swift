@@ -58,7 +58,7 @@ public extension PrivacyManager {
     }
     
     /// Present alert view controller for camera
-    func privacyCameraPermission(desc: String? = nil, presenting: UIViewController, authorized authorizedAction: @escaping PrivacyClosure, canceled cancelAction: PrivacyClosure? = nil, setting settingAction: PrivacyClosure? = nil) {
+    func cameraPermission(presenting: UIViewController, desc: String? = nil, authorized authorizedAction: @escaping PrivacyClosure, canceled cancelAction: PrivacyClosure? = nil, setting settingAction: PrivacyClosure? = nil) {
         return privacyPermission(type: PermissionType.camera, rxPersission: rxCameraPermission, desc: desc, presenting: presenting, authorized: authorizedAction, canceled: cancelAction, setting: settingAction)
     }
 }

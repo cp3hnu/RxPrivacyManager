@@ -104,7 +104,7 @@ public extension PrivacyManager {
     }
     
     /// Present alert view controller for location
-    func privacyLoactionPermission(always: Bool, desc: String? = nil, presenting: UIViewController, authorized authorizedAction: @escaping PrivacyClosure, canceled cancelAction: PrivacyClosure? = nil, setting settingAction: PrivacyClosure? = nil) {
+    func locationPermission(presenting: UIViewController, always: Bool, desc: String? = nil, authorized authorizedAction: @escaping PrivacyClosure, canceled cancelAction: PrivacyClosure? = nil, setting settingAction: PrivacyClosure? = nil) {
         
         let observable: Observable<Bool> = rxLocationPermission(always: true)
             .filter{ $0 != .unknown }

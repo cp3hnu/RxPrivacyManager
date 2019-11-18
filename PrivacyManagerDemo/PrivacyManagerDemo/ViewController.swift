@@ -40,7 +40,7 @@ class ViewController: UIViewController {
     
         // MARK: - UIViewController 请求权限 - 使用 UIViewcontroller 扩展方法 `privacyPermission`
         DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
-            PrivacyManager.shared.privacyLoactionPermission(always: false, presenting: self, authorized: {
+            PrivacyManager.shared.locationPermission(presenting: self, always: false, authorized: {
                 self.present("定位服务已授权")
             })
         }
@@ -64,7 +64,7 @@ class ViewController: UIViewController {
         _ = button1.rx.tap.subscribe(
             onNext: { [weak self] _ in
                 guard let self = self else { return }
-                PrivacyManager.shared.privacyCameraPermission(presenting: self, authorized: {
+                PrivacyManager.shared.cameraPermission(presenting: self, authorized: {
                     self.present("相机已授权")
                 })
             }
@@ -76,7 +76,7 @@ class ViewController: UIViewController {
         _ = button2.rx.tap.subscribe(
             onNext: { [weak self] _ in
                 guard let self = self else { return }
-                PrivacyManager.shared.privacyPhotoPermission(presenting: self, authorized: {
+                PrivacyManager.shared.photoPermission(presenting: self, authorized: {
                     self.present("照片已授权")
                 })
             }
@@ -90,7 +90,7 @@ class ViewController: UIViewController {
             onNext: { [weak self] _ in
                 guard let self = self else { return }
                 
-                PrivacyManager.shared.privacyMicrophonePermission(presenting: self, authorized: {
+                PrivacyManager.shared.microphonePermission(presenting: self, authorized: {
                     self.present("麦克风已授权")
                 })
             }
