@@ -8,6 +8,7 @@
 
 import Foundation
 import RxSwift
+import UIKit
 
 public class PrivacyManager {
     public static let shared = PrivacyManager()
