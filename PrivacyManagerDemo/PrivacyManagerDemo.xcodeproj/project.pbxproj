@@ -334,8 +334,8 @@
 		353AB431238045210054EEB8 /* PrivacyMicrophone */ = {
 			isa = PBXGroup;
 			children = (
-				353AB433238045210054EEB8 /* PrivacyMicrophone.h */,
 				353AB434238045210054EEB8 /* Info.plist */,
+				353AB433238045210054EEB8 /* PrivacyMicrophone.h */,
 				353AB432238045210054EEB8 /* PrivacyManager+Microphone.swift */,
 			);
 			name = PrivacyMicrophone;
@@ -366,8 +366,8 @@
 		353AB440238045220054EEB8 /* PrivacyContact */ = {
 			isa = PBXGroup;
 			children = (
-				353AB442238045220054EEB8 /* PrivacyContact.h */,
 				353AB443238045220054EEB8 /* Info.plist */,
+				353AB442238045220054EEB8 /* PrivacyContact.h */,
 				353AB441238045220054EEB8 /* PrivacyManager+Contact.swift */,
 			);
 			name = PrivacyContact;
