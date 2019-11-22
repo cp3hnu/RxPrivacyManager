@@ -9,6 +9,7 @@ Currently supported:
 *   Location Services
 *   Microphone
 *   Contacts
+*   Speech
 
 ## Installation
 
@@ -18,7 +19,7 @@ Currently supported:
 github "cp3hnu/PrivacyManager"
 ```
 
--   Drag and drop *PrivacyManager.framework*, *PrivacyPhoto.framework* from /Carthage/Build/iOS/ to *Linked Frameworks and Libraries* in Xcode (Project>Target>General>Linked Frameworks and Libraries)
+-   Drag and drop *PrivacyManager.framework*, *PrivacyPhoto.framework* or other framework from /Carthage/Build/iOS/ to *Linked Frameworks and Libraries* in Xcode (Project>Target>General>Linked Frameworks and Libraries)
 -   Add new run script
 
 ```ruby
@@ -42,9 +43,12 @@ File -> Swift Packages -> Add Package Dependency,  then search rxprivacymanager.
 **It's so easy!!!**  Just a function call
 
 ```swift
+import PrivacyManager
+import PrivacyPhoto
+
 // In UIViewController and subclasses
 PrivacyManager.shared.privacyCameraPermission(presenting: self, authorized: {
-  self.present("相机已授权")
+  print("相机已授权")
 })
 ```
 
@@ -70,7 +74,7 @@ PrivacyManager.shared.privacyCameraPermission(presenting: self, authorized: {
 
 -   Swift 5.0
 -   Xcode 10.0
--   iOS 9+
+-   iOS 9+ or iOS 10+（with Speech ）
 
 ## License
 

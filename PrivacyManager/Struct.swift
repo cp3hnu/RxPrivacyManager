@@ -16,6 +16,7 @@ public enum PermissionType: Int, CustomStringConvertible {
     case microphone
     case camera
     case photo
+    case speech
     
     public var description: String {
         switch self {
@@ -25,6 +26,7 @@ public enum PermissionType: Int, CustomStringConvertible {
         case .microphone:       return "麦克风"
         case .camera:           return "相机"
         case .photo:           return "照片"
+        case .speech:          return "语音识别"
         }
     }
 }

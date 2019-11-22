@@ -1,22 +1,22 @@
 //
-//  PrivacyManager+Photo.swift
-//  PrivacyManager
+//  PrivacyManager+Speech.swift
+//  PrivacySpeech
 //
-//  Created by CP3 on 10/23/19.
+//  Created by CP3 on 11/22/19.
 //  Copyright © 2019 CP3. All rights reserved.
 //
 
 import Foundation
 import UIKit
 import RxSwift
-import Photos
+import Speech
 import PrivacyManager
 
 /// Photo
 public extension PrivacyManager {
     /// 获取照片访问权限的状态
-    var photoStatus: PermissionStatus {
-        let status = PHPhotoLibrary.authorizationStatus()
+    var speechStatus: PermissionStatus {
+        let status = SFSpeechRecognizer.authorizationStatus()
         switch status {
         case .notDetermined:
             return .unknown
@@ -32,12 +32,12 @@ public extension PrivacyManager {
     }
     
     /// 获取照片访问权限的状态 - Observable
-    var rxPhotoPermission: Observable<Bool> {
+    var rxSpeechPermission: Observable<Bool> {
         return Observable.create{ observer -> Disposable in
-            let status = self.photoStatus
+            let status = self.speechStatus
             switch status {
             case .unknown:
-                PHPhotoLibrary.requestAuthorization { status in
+                SFSpeechRecognizer.requestAuthorization { status in
                     onMainThread {
                         observer.onNext(status == .authorized)
                         observer.onCompleted()
@@ -56,7 +56,7 @@ public extension PrivacyManager {
     }
     
     /// Present alert view controller for photo
-    func photoPermission(presenting: UIViewController, desc: String? = nil, authorized authorizedAction: @escaping PrivacyClosure, canceled cancelAction: PrivacyClosure? = nil, setting settingAction: PrivacyClosure? = nil) {
-        return privacyPermission(type: PermissionType.photo, rxPersission: rxPhotoPermission, desc: desc, presenting: presenting, authorized: authorizedAction, canceled: cancelAction, setting: settingAction)
+    func speechPermission(presenting: UIViewController, desc: String? = nil, authorized authorizedAction: @escaping PrivacyClosure, canceled cancelAction: PrivacyClosure? = nil, setting settingAction: PrivacyClosure? = nil) {
+        return privacyPermission(type: PermissionType.speech, rxPersission: rxSpeechPermission, desc: desc, presenting: presenting, authorized: authorizedAction, canceled: cancelAction, setting: settingAction)
     }
 }

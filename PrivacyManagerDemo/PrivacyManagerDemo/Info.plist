@@ -22,8 +22,8 @@
 	<string>????</string>
 	<key>CFBundleVersion</key>
 	<string>1</string>
-	<key>LSRequiresIPhoneOS</key>
-	<true/>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>需要您的授权才能使用照片</string>
 	<key>NSCameraUsageDescription</key>
 	<string>需要您的授权才能使用相机</string>
 	<key>NSContactsUsageDescription</key>
@@ -32,8 +32,8 @@
 	<string>需要您的授权才能使用定位</string>
 	<key>NSMicrophoneUsageDescription</key>
 	<string>需要您的授权才能使用麦克风</string>
-	<key>NSPhotoLibraryUsageDescription</key>
-	<string>需要您的授权才能使用相册</string>
+	<key>NSSpeechRecognitionUsageDescription</key>
+	<string>需要您的授权才能使用语音识别</string>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>

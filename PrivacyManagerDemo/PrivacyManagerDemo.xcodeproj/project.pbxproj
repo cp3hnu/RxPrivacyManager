@@ -33,6 +33,12 @@
 		354285FC236029AD00F1056B /* PrivacyManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 354285E12360256400F1056B /* PrivacyManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		359D22AE2360375000A76483 /* PrivacyManager.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB85E27B1E9F228500AFAFE3 /* PrivacyManager.framework */; };
 		359D22AF2360375000A76483 /* PrivacyManager.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = DB85E27B1E9F228500AFAFE3 /* PrivacyManager.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		35DF66962387C9890066325E /* PrivacySpeech.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 35DF668F2387C9890066325E /* PrivacySpeech.framework */; };
+		35DF66972387C9890066325E /* PrivacySpeech.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 35DF668F2387C9890066325E /* PrivacySpeech.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		35DF669E2387C9B40066325E /* PrivacySpeech.h in Headers */ = {isa = PBXBuildFile; fileRef = 35DF669C2387C9B40066325E /* PrivacySpeech.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		35DF66A02387CA0A0066325E /* PrivacyManager.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB85E27B1E9F228500AFAFE3 /* PrivacyManager.framework */; };
+		35DF66A12387CA0A0066325E /* PrivacyManager.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = DB85E27B1E9F228500AFAFE3 /* PrivacyManager.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		35DF66A62387CCE70066325E /* PrivacyManager+Speech.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35DF66A52387CCE70066325E /* PrivacyManager+Speech.swift */; };
 		35FA255223801D2800854685 /* PrivacyCamera.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 35FA254B23801D2800854685 /* PrivacyCamera.framework */; };
 		35FA255323801D2800854685 /* PrivacyCamera.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 35FA254B23801D2800854685 /* PrivacyCamera.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		35FA256323801D4300854685 /* PrivacyLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 35FA255C23801D4300854685 /* PrivacyLocation.framework */; };
@@ -65,6 +71,20 @@
 			remoteInfo = PrivacyPhoto;
 		};
 		353AB4822381369B0054EEB8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DB85E2591E9F227100AFAFE3 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DB85E27A1E9F228500AFAFE3;
+			remoteInfo = PrivacyManager;
+		};
+		35DF66942387C9890066325E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DB85E2591E9F227100AFAFE3 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 35DF668E2387C9890066325E;
+			remoteInfo = PrivacySpeech;
+		};
+		35DF66A22387CA0A0066325E /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = DB85E2591E9F227100AFAFE3 /* Project object */;
 			proxyType = 1;
@@ -157,9 +177,21 @@
 				353AB45F238131550054EEB8 /* PrivacyPhoto.framework in Embed Frameworks */,
 				35FA256423801D4300854685 /* PrivacyLocation.framework in Embed Frameworks */,
 				35FA257523801D7A00854685 /* PrivacyMicrophone.framework in Embed Frameworks */,
+				35DF66972387C9890066325E /* PrivacySpeech.framework in Embed Frameworks */,
 				35FA258623801D9C00854685 /* PrivacyContact.framework in Embed Frameworks */,
 				35FA255323801D2800854685 /* PrivacyCamera.framework in Embed Frameworks */,
 				359D22AF2360375000A76483 /* PrivacyManager.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		35DF66A42387CA0A0066325E /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				35DF66A12387CA0A0066325E /* PrivacyManager.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -239,6 +271,10 @@
 		354285EB2360256400F1056B /* Function.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Function.swift; sourceTree = "<group>"; };
 		354285EC2360256400F1056B /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		354285ED2360256400F1056B /* Struct.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Struct.swift; sourceTree = "<group>"; };
+		35DF668F2387C9890066325E /* PrivacySpeech.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = PrivacySpeech.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		35DF669C2387C9B40066325E /* PrivacySpeech.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrivacySpeech.h; sourceTree = "<group>"; };
+		35DF669D2387C9B40066325E /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		35DF66A52387CCE70066325E /* PrivacyManager+Speech.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PrivacyManager+Speech.swift"; sourceTree = "<group>"; };
 		35FA254B23801D2800854685 /* PrivacyCamera.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = PrivacyCamera.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		35FA255C23801D4300854685 /* PrivacyLocation.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = PrivacyLocation.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		35FA256D23801D7A00854685 /* PrivacyMicrophone.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = PrivacyMicrophone.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -259,6 +295,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				353AB4802381369B0054EEB8 /* PrivacyManager.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		35DF668C2387C9890066325E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				35DF66A02387CA0A0066325E /* PrivacyManager.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -301,6 +345,7 @@
 				353AB45E238131550054EEB8 /* PrivacyPhoto.framework in Frameworks */,
 				35FA255223801D2800854685 /* PrivacyCamera.framework in Frameworks */,
 				353AB47E238136350054EEB8 /* RxSwift.framework in Frameworks */,
+				35DF66962387C9890066325E /* PrivacySpeech.framework in Frameworks */,
 				353AB47A2381362E0054EEB8 /* RxCocoa.framework in Frameworks */,
 				35FA257423801D7A00854685 /* PrivacyMicrophone.framework in Frameworks */,
 				353AB47C238136310054EEB8 /* RxRelay.framework in Frameworks */,
@@ -409,11 +454,23 @@
 			path = ../PrivacyManager;
 			sourceTree = "<group>";
 		};
+		35DF669B2387C9B40066325E /* PrivacySpeech */ = {
+			isa = PBXGroup;
+			children = (
+				35DF669D2387C9B40066325E /* Info.plist */,
+				35DF669C2387C9B40066325E /* PrivacySpeech.h */,
+				35DF66A52387CCE70066325E /* PrivacyManager+Speech.swift */,
+			);
+			name = PrivacySpeech;
+			path = ../PrivacySpeech;
+			sourceTree = "<group>";
+		};
 		DB85E2581E9F227100AFAFE3 = {
 			isa = PBXGroup;
 			children = (
 				354285D3235FFA1500F1056B /* Package.swift */,
 				354285DF2360256400F1056B /* PrivacyManager */,
+				35DF669B2387C9B40066325E /* PrivacySpeech */,
 				353AB46D2381335D0054EEB8 /* PrivacyPhoto */,
 				353AB440238045220054EEB8 /* PrivacyContact */,
 				353AB435238045210054EEB8 /* PrivacyLocation */,
@@ -435,6 +492,7 @@
 				35FA256D23801D7A00854685 /* PrivacyMicrophone.framework */,
 				35FA257E23801D9C00854685 /* PrivacyContact.framework */,
 				353AB457238131550054EEB8 /* PrivacyPhoto.framework */,
+				35DF668F2387C9890066325E /* PrivacySpeech.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -460,6 +518,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				353AB4712381336F0054EEB8 /* PrivacyPhoto.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		35DF668A2387C9890066325E /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				35DF669E2387C9B40066325E /* PrivacySpeech.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -524,6 +590,26 @@
 			name = PrivacyPhoto;
 			productName = PrivacyPhoto;
 			productReference = 353AB457238131550054EEB8 /* PrivacyPhoto.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		35DF668E2387C9890066325E /* PrivacySpeech */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 35DF669A2387C9890066325E /* Build configuration list for PBXNativeTarget "PrivacySpeech" */;
+			buildPhases = (
+				35DF668A2387C9890066325E /* Headers */,
+				35DF668B2387C9890066325E /* Sources */,
+				35DF668C2387C9890066325E /* Frameworks */,
+				35DF668D2387C9890066325E /* Resources */,
+				35DF66A42387CA0A0066325E /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				35DF66A32387CA0A0066325E /* PBXTargetDependency */,
+			);
+			name = PrivacySpeech;
+			productName = PrivacySpeech;
+			productReference = 35DF668F2387C9890066325E /* PrivacySpeech.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		35FA254A23801D2800854685 /* PrivacyCamera */ = {
@@ -625,6 +711,7 @@
 				35FA257323801D7A00854685 /* PBXTargetDependency */,
 				35FA258423801D9C00854685 /* PBXTargetDependency */,
 				353AB45D238131550054EEB8 /* PBXTargetDependency */,
+				35DF66952387C9890066325E /* PBXTargetDependency */,
 			);
 			name = PrivacyManagerDemo;
 			productName = PrivacyManagerDemo;
@@ -660,6 +747,10 @@
 				ORGANIZATIONNAME = CP3;
 				TargetAttributes = {
 					353AB456238131550054EEB8 = {
+						CreatedOnToolsVersion = 11.2.1;
+						LastSwiftMigration = 1120;
+					};
+					35DF668E2387C9890066325E = {
 						CreatedOnToolsVersion = 11.2.1;
 						LastSwiftMigration = 1120;
 					};
@@ -706,12 +797,20 @@
 				35FA256C23801D7A00854685 /* PrivacyMicrophone */,
 				35FA257D23801D9C00854685 /* PrivacyContact */,
 				353AB456238131550054EEB8 /* PrivacyPhoto */,
+				35DF668E2387C9890066325E /* PrivacySpeech */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
 		353AB455238131550054EEB8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		35DF668D2387C9890066325E /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -796,6 +895,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		35DF668B2387C9890066325E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				35DF66A62387CCE70066325E /* PrivacyManager+Speech.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		35FA254723801D2800854685 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -862,6 +969,16 @@
 			isa = PBXTargetDependency;
 			target = DB85E27A1E9F228500AFAFE3 /* PrivacyManager */;
 			targetProxy = 353AB4822381369B0054EEB8 /* PBXContainerItemProxy */;
+		};
+		35DF66952387C9890066325E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 35DF668E2387C9890066325E /* PrivacySpeech */;
+			targetProxy = 35DF66942387C9890066325E /* PBXContainerItemProxy */;
+		};
+		35DF66A32387CA0A0066325E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DB85E27A1E9F228500AFAFE3 /* PrivacyManager */;
+			targetProxy = 35DF66A22387CA0A0066325E /* PBXContainerItemProxy */;
 		};
 		35FA255123801D2800854685 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -959,7 +1076,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				MARKETING_VERSION = 5.0.3;
+				MARKETING_VERSION = 5.0.4;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = com.datayp.PrivacyPhoto;
@@ -1003,9 +1120,94 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				MARKETING_VERSION = 5.0.3;
+				MARKETING_VERSION = 5.0.4;
 				MTL_FAST_MATH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = com.datayp.PrivacyPhoto;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		35DF66982387C9890066325E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = RJF3498JFC;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/../Carthage/Build/iOS",
+				);
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = "$(SRCROOT)/../PrivacySpeech/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 5.0.4;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.datayp.PrivacySpeech;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		35DF66992387C9890066325E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = RJF3498JFC;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/../Carthage/Build/iOS",
+				);
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = "$(SRCROOT)/../PrivacySpeech/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 5.0.4;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.datayp.PrivacySpeech;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
@@ -1043,7 +1245,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				MARKETING_VERSION = 5.0.3;
+				MARKETING_VERSION = 5.0.4;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = com.datayp.PrivacyCamera;
@@ -1086,7 +1288,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				MARKETING_VERSION = 5.0.3;
+				MARKETING_VERSION = 5.0.4;
 				MTL_FAST_MATH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = com.datayp.PrivacyCamera;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
@@ -1127,7 +1329,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				MARKETING_VERSION = 5.0.3;
+				MARKETING_VERSION = 5.0.4;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = com.datayp.PrivacyLocation;
@@ -1170,7 +1372,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				MARKETING_VERSION = 5.0.3;
+				MARKETING_VERSION = 5.0.4;
 				MTL_FAST_MATH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = com.datayp.PrivacyLocation;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
@@ -1211,7 +1413,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				MARKETING_VERSION = 5.0.3;
+				MARKETING_VERSION = 5.0.4;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = com.datayp.PrivacyMicrophone;
@@ -1253,7 +1455,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				MARKETING_VERSION = 5.0.3;
+				MARKETING_VERSION = 5.0.4;
 				MTL_FAST_MATH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = com.datayp.PrivacyMicrophone;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
@@ -1293,7 +1495,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				MARKETING_VERSION = 5.0.3;
+				MARKETING_VERSION = 5.0.4;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = com.datayp.PrivacyContact;
@@ -1335,7 +1537,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				MARKETING_VERSION = 5.0.3;
+				MARKETING_VERSION = 5.0.4;
 				MTL_FAST_MATH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = com.datayp.PrivacyContact;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
@@ -1464,6 +1666,7 @@
 				);
 				HEADER_SEARCH_PATHS = "";
 				INFOPLIST_FILE = PrivacyManagerDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1487,6 +1690,7 @@
 				);
 				HEADER_SEARCH_PATHS = "";
 				INFOPLIST_FILE = PrivacyManagerDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1521,7 +1725,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				MARKETING_VERSION = 5.0.3;
+				MARKETING_VERSION = 5.0.4;
 				PRODUCT_BUNDLE_IDENTIFIER = com.datayp.PrivacyManager;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -1557,7 +1761,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				MARKETING_VERSION = 5.0.3;
+				MARKETING_VERSION = 5.0.4;
 				PRODUCT_BUNDLE_IDENTIFIER = com.datayp.PrivacyManager;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -1577,6 +1781,15 @@
 			buildConfigurations = (
 				353AB461238131550054EEB8 /* Debug */,
 				353AB462238131550054EEB8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		35DF669A2387C9890066325E /* Build configuration list for PBXNativeTarget "PrivacySpeech" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				35DF66982387C9890066325E /* Debug */,
+				35DF66992387C9890066325E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

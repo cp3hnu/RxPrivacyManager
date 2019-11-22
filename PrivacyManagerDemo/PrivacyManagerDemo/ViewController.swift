@@ -15,6 +15,7 @@ import PrivacyCamera
 import PrivacyMicrophone
 import PrivacyContact
 import PrivacyLocation
+import PrivacySpeech
 
 class ViewController: UIViewController {
 
@@ -28,7 +29,7 @@ class ViewController: UIViewController {
         let cameraStatus = PrivacyManager.shared.cameraStatus
         print("cameraStatus = ", cameraStatus)
         
-        let phoneStatus = PrivacyManager.shared.photosStatus
+        let phoneStatus = PrivacyManager.shared.photoStatus
         print("phoneStatus = ", phoneStatus)
         
         let microphoneStatus = PrivacyManager.shared.microphoneStatus
@@ -96,12 +97,25 @@ class ViewController: UIViewController {
             }
         )
         
+        let button4 = UIButton()
+        button4.setTitle("语音识别", for: .normal)
+        button4.setTitleColor(UIColor.black, for: .normal)
+        _ = button4.rx.tap.subscribe(
+            onNext: { [weak self] _ in
+                guard let self = self else { return }
+                
+                PrivacyManager.shared.speechPermission(presenting: self, authorized: {
+                    self.present("语音识别已授权")
+                })
+            }
+        )
+        
     
         // MARK: - 使用 PrivacyManager 的 observable
-        let button4 = UIButton()
-        button4.setTitle("通讯录", for: .normal)
-        button4.setTitleColor(UIColor.black, for: .normal)
-        _ = button4.rx.tap
+        let button5 = UIButton()
+        button5.setTitle("通讯录", for: .normal)
+        button5.setTitleColor(UIColor.black, for: .normal)
+        _ = button5.rx.tap
             .flatMap{ () -> Observable<Bool> in
                 return PrivacyManager.shared.rxContactPermission
             }
@@ -115,13 +129,15 @@ class ViewController: UIViewController {
                 }
             )
 
-        [button1, button2, button3, button4].forEach { button in
+        [button1, button2, button3, button4, button5].forEach { button in
             button.translatesAutoresizingMaskIntoConstraints = false
             view.addSubview(button)
             view.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|-15-[button]-15-|", options: NSLayoutConstraint.FormatOptions(rawValue: 0), metrics: nil, views: ["button" : button]))
         }
         
         view.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:|-80-[button1(==40)]-40-[button2(==40)]-40-[button3(==40)]-40-[button4(==40)]", options: NSLayoutConstraint.FormatOptions(rawValue: 0), metrics: nil, views: ["button1" : button1, "button2" : button2, "button3" : button3, "button4" : button4]))
+        button5.topAnchor.constraint(equalTo: button4.bottomAnchor, constant: 40).isActive = true
+        
     }
 }
 
