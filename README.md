@@ -11,6 +11,8 @@ Currently supported:
 *   Contacts
 *   Speech
 
+Each has a framework that you can add separately to your project.
+
 ## Installation
 
 ### Carthage
@@ -51,8 +53,6 @@ PrivacyManager.shared.privacyCameraPermission(presenting: self, authorized: {
   print("相机已授权")
 })
 ```
-
-
 
 ## Screenshot
 
