@@ -4,12 +4,12 @@ Privacy manager for iOS based on RxSwift
 
 Currently supported:
 
-*   Camera
-*   Photos
-*   Location Services
-*   Microphone
-*   Contacts
-*   Speech
+- [x] Camera
+- [x] Photos
+- [x] Location Services
+- [x] Microphone
+- [x] Contacts
+- [x] Speech
 
 Each has a framework that you can add separately to your project.
 
@@ -65,25 +65,25 @@ func buttonTapped() {
   case .authorized:
     takePhoto()
   default:
-	presentAlertController()
+    presentAlertController()
   }
 }
 
 /// To open camera permission
 func presentAlertController() {
   let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
-        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel) { action in
-            // ...
-        }
-        let settingAction = UIAlertAction(title: "Setting", style: .default) { action in
-            if let settingsUrl = URL(string: UIApplication.openSettingsURLString) {
-                UIApplication.shared.openURL(settingsUrl)
-            }
-        }
-        alert.addAction(cancelAction)
-        alert.addAction(settingAction)
-        alert.preferredAction = settingAction
-        present(alert, animated: true, completion: nil)
+  let cancelAction = UIAlertAction(title: "Cancel", style: .cancel) { _ in
+    // ...
+  }
+  let settingAction = UIAlertAction(title: "Setting", style: .default) { _ in
+    if let settingsUrl = URL(string: UIApplication.openSettingsURLString) {
+      UIApplication.shared.openURL(settingsUrl)
+    }
+  }
+  alert.addAction(cancelAction)
+  alert.addAction(settingAction)
+  alert.preferredAction = settingAction
+  present(alert, animated: true, completion: nil)
 }
 ```
 
