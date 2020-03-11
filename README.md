@@ -13,35 +13,6 @@ Currently supported:
 
 Each has a framework that you can add separately to your project.
 
-## Installation
-
-### Carthage
-
-```swift
-github "cp3hnu/PrivacyManager"
-```
-
--   Drag and drop *PrivacyManager.framework*, *PrivacyPhoto.framework* or other related framework from /Carthage/Build/iOS/ to *Linked Frameworks and Libraries* in Xcode (Project>Target>General>Linked Frameworks and Libraries)
--   Add new run script
-
-```ruby
-/usr/local/bin/carthage copy-frameworks
-```
-
--   Add Input files
-
-```sh
-$(SRCROOT)/Carthage/Build/iOS/PrivacyManager.framework
-$(SRCROOT)/Carthage/Build/iOS/PrivacyPhoto.framework
-...
-other related framework
-```
-
-
-### Swift Package
-
-File -> Swift Packages -> Add Package Dependency,  then search rxprivacymanager.
-
 ## Usage
 
 Before, to take photo like this.
@@ -110,6 +81,34 @@ PrivacyManager.shared.privacyCameraPermission(presenting: self, authorized: {
 ![](screenshot-2.png)
 
 
+
+## Installation
+
+### Carthage
+
+```swift
+github "cp3hnu/PrivacyManager"
+```
+
+-   Drag and drop *PrivacyManager.framework*, *PrivacyPhoto.framework* or other related framework from /Carthage/Build/iOS/ to *Linked Frameworks and Libraries* in Xcode (Project>Target>General>Linked Frameworks and Libraries)
+-   Add new run script
+
+```ruby
+/usr/local/bin/carthage copy-frameworks
+```
+
+-   Add Input files
+
+```sh
+$(SRCROOT)/Carthage/Build/iOS/PrivacyManager.framework
+$(SRCROOT)/Carthage/Build/iOS/PrivacyPhoto.framework
+...
+other related framework
+```
+
+### Swift Package
+
+File -> Swift Packages -> Add Package Dependency,  then search rxprivacymanager.
 
 ## Dependencies
 
