@@ -21,7 +21,7 @@ Each has a framework that you can add separately to your project.
 github "cp3hnu/PrivacyManager"
 ```
 
--   Drag and drop *PrivacyManager.framework*, *PrivacyPhoto.framework* or other framework from /Carthage/Build/iOS/ to *Linked Frameworks and Libraries* in Xcode (Project>Target>General>Linked Frameworks and Libraries)
+-   Drag and drop *PrivacyManager.framework*, *PrivacyPhoto.framework* or other related framework from /Carthage/Build/iOS/ to *Linked Frameworks and Libraries* in Xcode (Project>Target>General>Linked Frameworks and Libraries)
 -   Add new run script
 
 ```ruby
@@ -33,6 +33,8 @@ github "cp3hnu/PrivacyManager"
 ```sh
 $(SRCROOT)/Carthage/Build/iOS/PrivacyManager.framework
 $(SRCROOT)/Carthage/Build/iOS/PrivacyPhoto.framework
+...
+other related framework
 ```
 
 
@@ -42,7 +44,50 @@ File -> Swift Packages -> Add Package Dependency,  then search rxprivacymanager.
 
 ## Usage
 
-**It's so easy!!!**  Just a function call
+Before, to take photo like this.
+
+```swift
+func buttonTapped() {
+  let status = AVCaptureDevice.authorizationStatus(for: .video)
+  switch status {
+  case .notDetermined:
+   AVCaptureDevice.requestAccess(
+     for: AVMediaType.video,
+     completionHandler: { granted in
+       if granted {
+         onMainThread {
+           takePhoto()
+         }
+       } else {
+         presentAlertController()
+       }
+     })
+  case .authorized:
+    takePhoto()
+  default:
+	presentAlertController()
+  }
+}
+
+/// To open camera permission
+func presentAlertController() {
+  let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel) { action in
+            // ...
+        }
+        let settingAction = UIAlertAction(title: "Setting", style: .default) { action in
+            if let settingsUrl = URL(string: UIApplication.openSettingsURLString) {
+                UIApplication.shared.openURL(settingsUrl)
+            }
+        }
+        alert.addAction(cancelAction)
+        alert.addAction(settingAction)
+        alert.preferredAction = settingAction
+        present(alert, animated: true, completion: nil)
+}
+```
+
+Now, just a function. **It's so easy!!!**  
 
 ```swift
 import PrivacyManager
@@ -50,7 +95,7 @@ import PrivacyPhoto
 
 // In UIViewController and subclasses
 PrivacyManager.shared.privacyCameraPermission(presenting: self, authorized: {
-  print("相机已授权")
+  takePhoto()
 })
 ```
 
