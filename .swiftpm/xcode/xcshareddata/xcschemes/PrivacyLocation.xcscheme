@@ -14,10 +14,10 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "DB85E27A1E9F228500AFAFE3"
-               BuildableName = "PrivacyManager.framework"
-               BlueprintName = "PrivacyManager"
-               ReferencedContainer = "container:PrivacyManagerDemo.xcodeproj">
+               BlueprintIdentifier = "PrivacyLocation"
+               BuildableName = "PrivacyLocation"
+               BlueprintName = "PrivacyLocation"
+               ReferencedContainer = "container:">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -40,15 +40,6 @@
       debugDocumentVersioning = "YES"
       debugServiceExtension = "internal"
       allowLocationSimulation = "YES">
-      <MacroExpansion>
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "DB85E27A1E9F228500AFAFE3"
-            BuildableName = "PrivacyManager.framework"
-            BlueprintName = "PrivacyManager"
-            ReferencedContainer = "container:PrivacyManagerDemo.xcodeproj">
-         </BuildableReference>
-      </MacroExpansion>
    </LaunchAction>
    <ProfileAction
       buildConfiguration = "Release"
@@ -59,10 +50,10 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "DB85E27A1E9F228500AFAFE3"
-            BuildableName = "PrivacyManager.framework"
-            BlueprintName = "PrivacyManager"
-            ReferencedContainer = "container:PrivacyManagerDemo.xcodeproj">
+            BlueprintIdentifier = "PrivacyLocation"
+            BuildableName = "PrivacyLocation"
+            BlueprintName = "PrivacyLocation"
+            ReferencedContainer = "container:">
          </BuildableReference>
       </MacroExpansion>
    </ProfileAction>

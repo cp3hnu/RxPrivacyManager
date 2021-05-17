@@ -26,6 +26,8 @@ public extension PrivacyManager {
             return .unauthorized
         case .restricted:
             return .disabled
+        case .limited:
+            return .authorized
         @unknown default:
             return .unknown
         }

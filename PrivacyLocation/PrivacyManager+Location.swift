@@ -56,7 +56,7 @@ public extension PrivacyManager {
                 .didChangeAuthorizationStatus
                 .startWith(status)
             }
-            .catchErrorJustReturn(CLAuthorizationStatus.notDetermined)
+            .catchAndReturn(CLAuthorizationStatus.notDetermined)
             .map {
                 switch $0 {
                 case .notDetermined:

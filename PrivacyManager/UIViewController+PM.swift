@@ -23,7 +23,7 @@ public extension UIViewController {
         let settingAction = UIAlertAction(title: "设置", style: UIAlertAction.Style.default) { _ in
             settingBlock?()
             if let settingsUrl = URL(string: UIApplication.openSettingsURLString) {
-                UIApplication.shared.openURL(settingsUrl)
+                UIApplication.shared.open(settingsUrl)
             }
         }
         alert.addAction(cancelAction)
