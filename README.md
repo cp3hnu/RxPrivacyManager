@@ -112,7 +112,7 @@ File -> Swift Packages -> Add Package Dependency,  then search rxprivacymanager.
 
 ## Dependencies
 
-*   [RxSwift 5.0.0+](https://github.com/ReactiveX/RxSwift)
+*   [RxSwift 6.2.0](https://github.com/ReactiveX/RxSwift)
 
 ## Requirements
 
