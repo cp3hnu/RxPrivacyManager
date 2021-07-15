@@ -27,7 +27,7 @@ public class RxCLLocationManagerDelegateProxy
         self.register { RxCLLocationManagerDelegateProxy(locationManager: $0) }
     }
 
-    internal lazy var didUpdateLocationsSubject = PublishSubject<[CLLocation]>()
+    internal lazy var didUpdateLocationsSubject = BehaviorSubject<[CLLocation]>(value: [])
     internal lazy var didFailWithErrorSubject = PublishSubject<Error>()
 
     public func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {

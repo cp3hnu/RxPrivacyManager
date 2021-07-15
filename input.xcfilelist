@@ -1,3 +1,0 @@
-$(SRCROOT)/../Carthage/Build/iOS/RxSwift.framework
-$(SRCROOT)/../Carthage/Build/iOS/RxCocoa.framework
-$(SRCROOT)/../Carthage/Build/iOS/RxRelay.framework

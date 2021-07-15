@@ -21,9 +21,6 @@
 		353AB477238134180054EEB8 /* PrivacyLocation.h in Headers */ = {isa = PBXBuildFile; fileRef = 353AB43A238045210054EEB8 /* PrivacyLocation.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		353AB478238134910054EEB8 /* CLLocationManager+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 353AB437238045210054EEB8 /* CLLocationManager+Rx.swift */; };
 		353AB479238134910054EEB8 /* RxCLLocationManagerDelegateProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 353AB438238045210054EEB8 /* RxCLLocationManagerDelegateProxy.swift */; };
-		353AB47A2381362E0054EEB8 /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 353AB44F238046780054EEB8 /* RxCocoa.framework */; };
-		353AB47C238136310054EEB8 /* RxRelay.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 353AB44C238046760054EEB8 /* RxRelay.framework */; };
-		353AB47E238136350054EEB8 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 353AB449238046700054EEB8 /* RxSwift.framework */; };
 		353AB4802381369B0054EEB8 /* PrivacyManager.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB85E27B1E9F228500AFAFE3 /* PrivacyManager.framework */; };
 		353AB4812381369B0054EEB8 /* PrivacyManager.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = DB85E27B1E9F228500AFAFE3 /* PrivacyManager.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		354285F02360256500F1056B /* UIViewController+PM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 354285E22360256400F1056B /* UIViewController+PM.swift */; };
@@ -60,9 +57,8 @@
 		DB85E26A1E9F227100AFAFE3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DB85E2681E9F227100AFAFE3 /* Main.storyboard */; };
 		DB85E26C1E9F227100AFAFE3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DB85E26B1E9F227100AFAFE3 /* Assets.xcassets */; };
 		DB85E26F1E9F227100AFAFE3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DB85E26D1E9F227100AFAFE3 /* LaunchScreen.storyboard */; };
-		ECBF22B32651F0AC006D0FB7 /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = ECBF22B22651F0AC006D0FB7 /* RxSwift */; };
-		ECBF22B52651F0AC006D0FB7 /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = ECBF22B42651F0AC006D0FB7 /* RxCocoa */; };
-		ECBF22B72651F0AC006D0FB7 /* RxRelay in Frameworks */ = {isa = PBXBuildFile; productRef = ECBF22B62651F0AC006D0FB7 /* RxRelay */; };
+		ECA566B026A06E1E00B778A6 /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = ECA566AF26A06E1E00B778A6 /* RxSwift */; };
+		ECA566B226A06EB100B778A6 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECA566B126A06EB100B778A6 /* SecondViewController.swift */; };
 		ECBF22B92651F0D6006D0FB7 /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = ECBF22B82651F0D6006D0FB7 /* RxCocoa */; };
 		ECBF22BB2651F0D6006D0FB7 /* RxRelay in Frameworks */ = {isa = PBXBuildFile; productRef = ECBF22BA2651F0D6006D0FB7 /* RxRelay */; };
 		ECBF22BD2651F0D6006D0FB7 /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = ECBF22BC2651F0D6006D0FB7 /* RxSwift */; };
@@ -263,9 +259,6 @@
 		353AB441238045220054EEB8 /* PrivacyManager+Contact.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PrivacyManager+Contact.swift"; sourceTree = "<group>"; };
 		353AB442238045220054EEB8 /* PrivacyContact.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrivacyContact.h; sourceTree = "<group>"; };
 		353AB443238045220054EEB8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		353AB449238046700054EEB8 /* RxSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwift.framework; path = ../Carthage/Build/iOS/RxSwift.framework; sourceTree = "<group>"; };
-		353AB44C238046760054EEB8 /* RxRelay.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxRelay.framework; path = ../Carthage/Build/iOS/RxRelay.framework; sourceTree = "<group>"; };
-		353AB44F238046780054EEB8 /* RxCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxCocoa.framework; path = ../Carthage/Build/iOS/RxCocoa.framework; sourceTree = "<group>"; };
 		353AB457238131550054EEB8 /* PrivacyPhoto.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = PrivacyPhoto.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		353AB46E2381335D0054EEB8 /* PrivacyPhoto.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrivacyPhoto.h; sourceTree = "<group>"; };
 		353AB46F2381335D0054EEB8 /* PrivacyManager+Photo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PrivacyManager+Photo.swift"; sourceTree = "<group>"; };
@@ -293,6 +286,7 @@
 		DB85E26E1E9F227100AFAFE3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DB85E2701E9F227100AFAFE3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DB85E27B1E9F228500AFAFE3 /* PrivacyManager.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = PrivacyManager.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		ECA566B126A06EB100B778A6 /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -350,17 +344,12 @@
 			files = (
 				353AB45E238131550054EEB8 /* PrivacyPhoto.framework in Frameworks */,
 				35FA255223801D2800854685 /* PrivacyCamera.framework in Frameworks */,
-				353AB47E238136350054EEB8 /* RxSwift.framework in Frameworks */,
 				35DF66962387C9890066325E /* PrivacySpeech.framework in Frameworks */,
-				353AB47A2381362E0054EEB8 /* RxCocoa.framework in Frameworks */,
 				35FA257423801D7A00854685 /* PrivacyMicrophone.framework in Frameworks */,
-				ECBF22B52651F0AC006D0FB7 /* RxCocoa in Frameworks */,
-				353AB47C238136310054EEB8 /* RxRelay.framework in Frameworks */,
 				359D22AE2360375000A76483 /* PrivacyManager.framework in Frameworks */,
-				ECBF22B72651F0AC006D0FB7 /* RxRelay in Frameworks */,
 				35FA258523801D9C00854685 /* PrivacyContact.framework in Frameworks */,
+				ECA566B026A06E1E00B778A6 /* RxSwift in Frameworks */,
 				35FA256323801D4300854685 /* PrivacyLocation.framework in Frameworks */,
-				ECBF22B32651F0AC006D0FB7 /* RxSwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -434,9 +423,6 @@
 		353AB448238046700054EEB8 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				353AB44F238046780054EEB8 /* RxCocoa.framework */,
-				353AB44C238046760054EEB8 /* RxRelay.framework */,
-				353AB449238046700054EEB8 /* RxSwift.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -513,6 +499,7 @@
 			isa = PBXGroup;
 			children = (
 				DB85E2641E9F227100AFAFE3 /* AppDelegate.swift */,
+				ECA566B126A06EB100B778A6 /* SecondViewController.swift */,
 				DB85E2661E9F227100AFAFE3 /* ViewController.swift */,
 				DB85E2681E9F227100AFAFE3 /* Main.storyboard */,
 				DB85E26B1E9F227100AFAFE3 /* Assets.xcassets */,
@@ -711,7 +698,6 @@
 				DB85E25D1E9F227100AFAFE3 /* Sources */,
 				DB85E25E1E9F227100AFAFE3 /* Frameworks */,
 				DB85E25F1E9F227100AFAFE3 /* Resources */,
-				DB85E2931E9F43C700AFAFE3 /* ShellScript */,
 				359D22B02360375000A76483 /* Embed Frameworks */,
 			);
 			buildRules = (
@@ -727,9 +713,7 @@
 			);
 			name = PrivacyManagerDemo;
 			packageProductDependencies = (
-				ECBF22B22651F0AC006D0FB7 /* RxSwift */,
-				ECBF22B42651F0AC006D0FB7 /* RxCocoa */,
-				ECBF22B62651F0AC006D0FB7 /* RxRelay */,
+				ECA566AF26A06E1E00B778A6 /* RxSwift */,
 			);
 			productName = PrivacyManagerDemo;
 			productReference = DB85E2611E9F227100AFAFE3 /* PrivacyManagerDemo.app */;
@@ -888,28 +872,6 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
-/* Begin PBXShellScriptBuildPhase section */
-		DB85E2931E9F43C700AFAFE3 /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"$(SRCROOT)/../input.xcfilelist",
-			);
-			inputPaths = (
-			);
-			outputFileListPaths = (
-				"$(SRCROOT)/../output.xcfilelist",
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "/usr/local/bin/carthage copy-frameworks\n";
-		};
-/* End PBXShellScriptBuildPhase section */
-
 /* Begin PBXSourcesBuildPhase section */
 		353AB453238131550054EEB8 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -965,6 +927,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ECA566B226A06EB100B778A6 /* SecondViewController.swift in Sources */,
 				DB85E2671E9F227100AFAFE3 /* ViewController.swift in Sources */,
 				DB85E2651E9F227100AFAFE3 /* AppDelegate.swift in Sources */,
 			);
@@ -1097,7 +1060,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				MARKETING_VERSION = 6.0.2;
+				MARKETING_VERSION = 6.0.3;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = com.datayp.PrivacyPhoto;
@@ -1138,7 +1101,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				MARKETING_VERSION = 6.0.2;
+				MARKETING_VERSION = 6.0.3;
 				MTL_FAST_MATH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = com.datayp.PrivacyPhoto;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
@@ -1176,7 +1139,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				MARKETING_VERSION = 6.0.2;
+				MARKETING_VERSION = 6.0.3;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = com.datayp.PrivacySpeech;
@@ -1217,7 +1180,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				MARKETING_VERSION = 6.0.2;
+				MARKETING_VERSION = 6.0.3;
 				MTL_FAST_MATH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = com.datayp.PrivacySpeech;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
@@ -1254,7 +1217,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				MARKETING_VERSION = 6.0.2;
+				MARKETING_VERSION = 6.0.3;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = com.datayp.PrivacyCamera;
@@ -1294,7 +1257,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				MARKETING_VERSION = 6.0.2;
+				MARKETING_VERSION = 6.0.3;
 				MTL_FAST_MATH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = com.datayp.PrivacyCamera;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
@@ -1332,7 +1295,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				MARKETING_VERSION = 6.0.2;
+				MARKETING_VERSION = 6.0.3;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = com.datayp.PrivacyLocation;
@@ -1372,7 +1335,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				MARKETING_VERSION = 6.0.2;
+				MARKETING_VERSION = 6.0.3;
 				MTL_FAST_MATH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = com.datayp.PrivacyLocation;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
@@ -1410,7 +1373,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				MARKETING_VERSION = 6.0.2;
+				MARKETING_VERSION = 6.0.3;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = com.datayp.PrivacyMicrophone;
@@ -1449,7 +1412,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				MARKETING_VERSION = 6.0.2;
+				MARKETING_VERSION = 6.0.3;
 				MTL_FAST_MATH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = com.datayp.PrivacyMicrophone;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
@@ -1486,7 +1449,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				MARKETING_VERSION = 6.0.2;
+				MARKETING_VERSION = 6.0.3;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = com.datayp.PrivacyContact;
@@ -1525,7 +1488,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				MARKETING_VERSION = 6.0.2;
+				MARKETING_VERSION = 6.0.3;
 				MTL_FAST_MATH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = com.datayp.PrivacyContact;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
@@ -1708,7 +1671,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				MARKETING_VERSION = 6.0.2;
+				MARKETING_VERSION = 6.0.3;
 				PRODUCT_BUNDLE_IDENTIFIER = com.datayp.PrivacyManager;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -1743,7 +1706,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				MARKETING_VERSION = 6.0.2;
+				MARKETING_VERSION = 6.0.3;
 				PRODUCT_BUNDLE_IDENTIFIER = com.datayp.PrivacyManager;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -1853,20 +1816,10 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		ECBF22B22651F0AC006D0FB7 /* RxSwift */ = {
+		ECA566AF26A06E1E00B778A6 /* RxSwift */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = ECBF22B12651F0AC006D0FB7 /* XCRemoteSwiftPackageReference "RxSwift" */;
 			productName = RxSwift;
-		};
-		ECBF22B42651F0AC006D0FB7 /* RxCocoa */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = ECBF22B12651F0AC006D0FB7 /* XCRemoteSwiftPackageReference "RxSwift" */;
-			productName = RxCocoa;
-		};
-		ECBF22B62651F0AC006D0FB7 /* RxRelay */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = ECBF22B12651F0AC006D0FB7 /* XCRemoteSwiftPackageReference "RxSwift" */;
-			productName = RxRelay;
 		};
 		ECBF22B82651F0D6006D0FB7 /* RxCocoa */ = {
 			isa = XCSwiftPackageProductDependency;

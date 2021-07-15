@@ -74,6 +74,7 @@ public extension PrivacyManager {
     
     /// 获取位置
     var rxLocations: Observable<[CLLocation]> {
+        
         return locationManager.rx.didUpdateLocations
     }
     

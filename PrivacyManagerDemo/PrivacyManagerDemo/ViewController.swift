@@ -39,22 +39,22 @@ class ViewController: UIViewController {
         print("contactStatus = ", contactStatus)
         
     
+        _ = PrivacyManager.shared.rxLocations
+            .skip(1)
+            .subscribe(onNext: { locations in
+            print("locations", locations)
+        }, onError: { error in
+            print("error", error)
+        }, onCompleted: {
+            print("onCompleted")
+        }, onDisposed: {
+            print("onDisposed")
+        })
+        
         // MARK: - UIViewController 请求权限 - 使用 UIViewcontroller 扩展方法 `privacyPermission`
         DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
             PrivacyManager.shared.locationPermission(presenting: self, always: false, authorized: {
                 self.present("定位服务已授权")
-            })
-        }
-        
-        DispatchQueue.main.asyncAfter(deadline: .now() + 3.0) {
-            _ = PrivacyManager.shared.rxLocations.subscribe(onNext: { locations in
-                print("locations", locations)
-            }, onError: { error in
-                print("error", error)
-            }, onCompleted: {
-                print("onCompleted")
-            }, onDisposed: {
-                print("onDisposed")
             })
         }
         
