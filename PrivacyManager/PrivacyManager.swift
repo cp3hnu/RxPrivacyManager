@@ -15,12 +15,12 @@ public class PrivacyManager {
     
     public func privacyPermission(type: PermissionType, rxPersission: Observable<Bool>, desc: String? = nil, presenting: UIViewController, authorized authorizedAction: @escaping PrivacyClosure, canceled cancelAction: PrivacyClosure? = nil, setting settingAction: PrivacyClosure? = nil) {
         _ = rxPersission
-            .subscribe(
-                onNext: { result in
+            .subscribe( 
+                onNext: { [weak presenting] result in
                     if result {
                         authorizedAction()
                     } else {
-                        presenting.presentPrivacySetting(type: type, desc: desc, cancelBlock: cancelAction, settingBlock: settingAction)
+                        presenting?.presentPrivacySetting(type: type, desc: desc, cancelBlock: cancelAction, settingBlock: settingAction)
                     }
                 }
             )
