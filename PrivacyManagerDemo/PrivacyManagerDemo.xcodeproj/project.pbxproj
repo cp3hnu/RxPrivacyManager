@@ -57,11 +57,11 @@
 		DB85E26A1E9F227100AFAFE3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DB85E2681E9F227100AFAFE3 /* Main.storyboard */; };
 		DB85E26C1E9F227100AFAFE3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DB85E26B1E9F227100AFAFE3 /* Assets.xcassets */; };
 		DB85E26F1E9F227100AFAFE3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DB85E26D1E9F227100AFAFE3 /* LaunchScreen.storyboard */; };
-		ECA566B026A06E1E00B778A6 /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = ECA566AF26A06E1E00B778A6 /* RxSwift */; };
+		EC7911D926D4942C00543D1B /* RxBlocking in Frameworks */ = {isa = PBXBuildFile; productRef = EC7911D826D4942C00543D1B /* RxBlocking */; };
+		EC7911DB26D4942C00543D1B /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = EC7911DA26D4942C00543D1B /* RxCocoa */; };
+		EC7911DD26D4942C00543D1B /* RxRelay in Frameworks */ = {isa = PBXBuildFile; productRef = EC7911DC26D4942C00543D1B /* RxRelay */; };
+		EC7911DF26D4942C00543D1B /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = EC7911DE26D4942C00543D1B /* RxSwift */; };
 		ECA566B226A06EB100B778A6 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECA566B126A06EB100B778A6 /* SecondViewController.swift */; };
-		ECBF22B92651F0D6006D0FB7 /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = ECBF22B82651F0D6006D0FB7 /* RxCocoa */; };
-		ECBF22BB2651F0D6006D0FB7 /* RxRelay in Frameworks */ = {isa = PBXBuildFile; productRef = ECBF22BA2651F0D6006D0FB7 /* RxRelay */; };
-		ECBF22BD2651F0D6006D0FB7 /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = ECBF22BC2651F0D6006D0FB7 /* RxSwift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -348,7 +348,6 @@
 				35FA257423801D7A00854685 /* PrivacyMicrophone.framework in Frameworks */,
 				359D22AE2360375000A76483 /* PrivacyManager.framework in Frameworks */,
 				35FA258523801D9C00854685 /* PrivacyContact.framework in Frameworks */,
-				ECA566B026A06E1E00B778A6 /* RxSwift in Frameworks */,
 				35FA256323801D4300854685 /* PrivacyLocation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -357,9 +356,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				ECBF22BD2651F0D6006D0FB7 /* RxSwift in Frameworks */,
-				ECBF22BB2651F0D6006D0FB7 /* RxRelay in Frameworks */,
-				ECBF22B92651F0D6006D0FB7 /* RxCocoa in Frameworks */,
+				EC7911DD26D4942C00543D1B /* RxRelay in Frameworks */,
+				EC7911DB26D4942C00543D1B /* RxCocoa in Frameworks */,
+				EC7911DF26D4942C00543D1B /* RxSwift in Frameworks */,
+				EC7911D926D4942C00543D1B /* RxBlocking in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -713,7 +713,6 @@
 			);
 			name = PrivacyManagerDemo;
 			packageProductDependencies = (
-				ECA566AF26A06E1E00B778A6 /* RxSwift */,
 			);
 			productName = PrivacyManagerDemo;
 			productReference = DB85E2611E9F227100AFAFE3 /* PrivacyManagerDemo.app */;
@@ -734,9 +733,10 @@
 			);
 			name = PrivacyManager;
 			packageProductDependencies = (
-				ECBF22B82651F0D6006D0FB7 /* RxCocoa */,
-				ECBF22BA2651F0D6006D0FB7 /* RxRelay */,
-				ECBF22BC2651F0D6006D0FB7 /* RxSwift */,
+				EC7911D826D4942C00543D1B /* RxBlocking */,
+				EC7911DA26D4942C00543D1B /* RxCocoa */,
+				EC7911DC26D4942C00543D1B /* RxRelay */,
+				EC7911DE26D4942C00543D1B /* RxSwift */,
 			);
 			productName = PrivacyManager;
 			productReference = DB85E27B1E9F228500AFAFE3 /* PrivacyManager.framework */;
@@ -1816,22 +1816,22 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		ECA566AF26A06E1E00B778A6 /* RxSwift */ = {
+		EC7911D826D4942C00543D1B /* RxBlocking */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = ECBF22B12651F0AC006D0FB7 /* XCRemoteSwiftPackageReference "RxSwift" */;
-			productName = RxSwift;
+			productName = RxBlocking;
 		};
-		ECBF22B82651F0D6006D0FB7 /* RxCocoa */ = {
+		EC7911DA26D4942C00543D1B /* RxCocoa */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = ECBF22B12651F0AC006D0FB7 /* XCRemoteSwiftPackageReference "RxSwift" */;
 			productName = RxCocoa;
 		};
-		ECBF22BA2651F0D6006D0FB7 /* RxRelay */ = {
+		EC7911DC26D4942C00543D1B /* RxRelay */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = ECBF22B12651F0AC006D0FB7 /* XCRemoteSwiftPackageReference "RxSwift" */;
 			productName = RxRelay;
 		};
-		ECBF22BC2651F0D6006D0FB7 /* RxSwift */ = {
+		EC7911DE26D4942C00543D1B /* RxSwift */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = ECBF22B12651F0AC006D0FB7 /* XCRemoteSwiftPackageReference "RxSwift" */;
 			productName = RxSwift;

@@ -64,8 +64,8 @@ Now, just a function. **It's so easy!!!**
 import PrivacyManager
 import PrivacyPhoto
 
-// In UIViewController and subclasses
-PrivacyManager.shared.privacyCameraPermission(presenting: self, authorized: {
+let controller = ...
+PrivacyManager.shared.cameraPermission(presenting: controller, authorized: {
   takePhoto()
 })
 ```
@@ -108,7 +108,7 @@ other related framework
 
 ### Swift Package
 
-File -> Swift Packages -> Add Package Dependency,  then search rxprivacymanager.
+File -> Swift Packages -> Add Package Dependency,  then search rxprivacymanager or input `https://github.com/cp3hnu/RxPrivacyManager.git`.
 
 ## Dependencies
 
