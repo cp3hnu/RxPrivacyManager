@@ -74,7 +74,6 @@ public extension PrivacyManager {
     
     /// 获取位置
     var rxLocations: Observable<[CLLocation]> {
-        
         return locationManager.rx.didUpdateLocations
     }
     
@@ -107,7 +106,7 @@ public extension PrivacyManager {
     /// Present alert view controller for location
     func locationPermission(presenting: UIViewController, always: Bool, desc: String? = nil, authorized authorizedAction: @escaping PrivacyClosure, canceled cancelAction: PrivacyClosure? = nil, setting settingAction: PrivacyClosure? = nil) {
         
-        let observable: Observable<Bool> = rxLocationPermission(always: true)
+        let observable: Observable<Bool> = rxLocationPermission(always: always)
             .filter{ $0 != .unknown }
             .map{ $0 == .authorized }
         let type: PermissionType = always ? .locationAlways : .locationInUse

@@ -53,7 +53,7 @@
 		35FA25B223803BF100854685 /* PrivacyManager.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB85E27B1E9F228500AFAFE3 /* PrivacyManager.framework */; };
 		35FA25B323803BF100854685 /* PrivacyManager.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = DB85E27B1E9F228500AFAFE3 /* PrivacyManager.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		DB85E2651E9F227100AFAFE3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB85E2641E9F227100AFAFE3 /* AppDelegate.swift */; };
-		DB85E2671E9F227100AFAFE3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB85E2661E9F227100AFAFE3 /* ViewController.swift */; };
+		DB85E2671E9F227100AFAFE3 /* HomeCtrlr.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB85E2661E9F227100AFAFE3 /* HomeCtrlr.swift */; };
 		DB85E26A1E9F227100AFAFE3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DB85E2681E9F227100AFAFE3 /* Main.storyboard */; };
 		DB85E26C1E9F227100AFAFE3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DB85E26B1E9F227100AFAFE3 /* Assets.xcassets */; };
 		DB85E26F1E9F227100AFAFE3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DB85E26D1E9F227100AFAFE3 /* LaunchScreen.storyboard */; };
@@ -61,7 +61,8 @@
 		EC7911DB26D4942C00543D1B /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = EC7911DA26D4942C00543D1B /* RxCocoa */; };
 		EC7911DD26D4942C00543D1B /* RxRelay in Frameworks */ = {isa = PBXBuildFile; productRef = EC7911DC26D4942C00543D1B /* RxRelay */; };
 		EC7911DF26D4942C00543D1B /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = EC7911DE26D4942C00543D1B /* RxSwift */; };
-		ECA566B226A06EB100B778A6 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECA566B126A06EB100B778A6 /* SecondViewController.swift */; };
+		ECB15E022742102D007920EA /* LocationCtrlr.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECB15E012742102D007920EA /* LocationCtrlr.swift */; };
+		ECB15E0527421138007920EA /* Bricking in Frameworks */ = {isa = PBXBuildFile; productRef = ECB15E0427421138007920EA /* Bricking */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -280,13 +281,13 @@
 		35FA257E23801D9C00854685 /* PrivacyContact.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = PrivacyContact.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DB85E2611E9F227100AFAFE3 /* PrivacyManagerDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PrivacyManagerDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DB85E2641E9F227100AFAFE3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		DB85E2661E9F227100AFAFE3 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		DB85E2661E9F227100AFAFE3 /* HomeCtrlr.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCtrlr.swift; sourceTree = "<group>"; };
 		DB85E2691E9F227100AFAFE3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		DB85E26B1E9F227100AFAFE3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DB85E26E1E9F227100AFAFE3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DB85E2701E9F227100AFAFE3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DB85E27B1E9F228500AFAFE3 /* PrivacyManager.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = PrivacyManager.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		ECA566B126A06EB100B778A6 /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
+		ECB15E012742102D007920EA /* LocationCtrlr.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationCtrlr.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -343,6 +344,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				353AB45E238131550054EEB8 /* PrivacyPhoto.framework in Frameworks */,
+				ECB15E0527421138007920EA /* Bricking in Frameworks */,
 				35FA255223801D2800854685 /* PrivacyCamera.framework in Frameworks */,
 				35DF66962387C9890066325E /* PrivacySpeech.framework in Frameworks */,
 				35FA257423801D7A00854685 /* PrivacyMicrophone.framework in Frameworks */,
@@ -499,8 +501,8 @@
 			isa = PBXGroup;
 			children = (
 				DB85E2641E9F227100AFAFE3 /* AppDelegate.swift */,
-				ECA566B126A06EB100B778A6 /* SecondViewController.swift */,
-				DB85E2661E9F227100AFAFE3 /* ViewController.swift */,
+				DB85E2661E9F227100AFAFE3 /* HomeCtrlr.swift */,
+				ECB15E012742102D007920EA /* LocationCtrlr.swift */,
 				DB85E2681E9F227100AFAFE3 /* Main.storyboard */,
 				DB85E26B1E9F227100AFAFE3 /* Assets.xcassets */,
 				DB85E26D1E9F227100AFAFE3 /* LaunchScreen.storyboard */,
@@ -713,6 +715,7 @@
 			);
 			name = PrivacyManagerDemo;
 			packageProductDependencies = (
+				ECB15E0427421138007920EA /* Bricking */,
 			);
 			productName = PrivacyManagerDemo;
 			productReference = DB85E2611E9F227100AFAFE3 /* PrivacyManagerDemo.app */;
@@ -793,6 +796,7 @@
 			mainGroup = DB85E2581E9F227100AFAFE3;
 			packageReferences = (
 				ECBF22B12651F0AC006D0FB7 /* XCRemoteSwiftPackageReference "RxSwift" */,
+				ECB15E0327421138007920EA /* XCRemoteSwiftPackageReference "Bricking" */,
 			);
 			productRefGroup = DB85E2621E9F227100AFAFE3 /* Products */;
 			projectDirPath = "";
@@ -927,8 +931,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				ECA566B226A06EB100B778A6 /* SecondViewController.swift in Sources */,
-				DB85E2671E9F227100AFAFE3 /* ViewController.swift in Sources */,
+				DB85E2671E9F227100AFAFE3 /* HomeCtrlr.swift in Sources */,
+				ECB15E022742102D007920EA /* LocationCtrlr.swift in Sources */,
 				DB85E2651E9F227100AFAFE3 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1060,7 +1064,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				MARKETING_VERSION = 6.0.3;
+				MARKETING_VERSION = 6.0.4;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = com.datayp.PrivacyPhoto;
@@ -1101,7 +1105,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				MARKETING_VERSION = 6.0.3;
+				MARKETING_VERSION = 6.0.4;
 				MTL_FAST_MATH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = com.datayp.PrivacyPhoto;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
@@ -1139,7 +1143,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				MARKETING_VERSION = 6.0.3;
+				MARKETING_VERSION = 6.0.4;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = com.datayp.PrivacySpeech;
@@ -1180,7 +1184,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				MARKETING_VERSION = 6.0.3;
+				MARKETING_VERSION = 6.0.4;
 				MTL_FAST_MATH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = com.datayp.PrivacySpeech;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
@@ -1217,7 +1221,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				MARKETING_VERSION = 6.0.3;
+				MARKETING_VERSION = 6.0.4;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = com.datayp.PrivacyCamera;
@@ -1257,7 +1261,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				MARKETING_VERSION = 6.0.3;
+				MARKETING_VERSION = 6.0.4;
 				MTL_FAST_MATH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = com.datayp.PrivacyCamera;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
@@ -1295,7 +1299,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				MARKETING_VERSION = 6.0.3;
+				MARKETING_VERSION = 6.0.4;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = com.datayp.PrivacyLocation;
@@ -1335,7 +1339,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				MARKETING_VERSION = 6.0.3;
+				MARKETING_VERSION = 6.0.4;
 				MTL_FAST_MATH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = com.datayp.PrivacyLocation;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
@@ -1373,7 +1377,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				MARKETING_VERSION = 6.0.3;
+				MARKETING_VERSION = 6.0.4;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = com.datayp.PrivacyMicrophone;
@@ -1412,7 +1416,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				MARKETING_VERSION = 6.0.3;
+				MARKETING_VERSION = 6.0.4;
 				MTL_FAST_MATH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = com.datayp.PrivacyMicrophone;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
@@ -1449,7 +1453,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				MARKETING_VERSION = 6.0.3;
+				MARKETING_VERSION = 6.0.4;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = com.datayp.PrivacyContact;
@@ -1488,7 +1492,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				MARKETING_VERSION = 6.0.3;
+				MARKETING_VERSION = 6.0.4;
 				MTL_FAST_MATH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = com.datayp.PrivacyContact;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
@@ -1616,12 +1620,12 @@
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				HEADER_SEARCH_PATHS = "";
 				INFOPLIST_FILE = PrivacyManagerDemo/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.datayp.PrivacyManagerDemo;
+				PRODUCT_BUNDLE_IDENTIFIER = com.datayp.PrivacyManagerDemo16;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -1637,12 +1641,12 @@
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				HEADER_SEARCH_PATHS = "";
 				INFOPLIST_FILE = PrivacyManagerDemo/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.datayp.PrivacyManagerDemo;
+				PRODUCT_BUNDLE_IDENTIFIER = com.datayp.PrivacyManagerDemo16;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -1671,7 +1675,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				MARKETING_VERSION = 6.0.3;
+				MARKETING_VERSION = 6.0.4;
 				PRODUCT_BUNDLE_IDENTIFIER = com.datayp.PrivacyManager;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -1706,7 +1710,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				MARKETING_VERSION = 6.0.3;
+				MARKETING_VERSION = 6.0.4;
 				PRODUCT_BUNDLE_IDENTIFIER = com.datayp.PrivacyManager;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -1805,6 +1809,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		ECB15E0327421138007920EA /* XCRemoteSwiftPackageReference "Bricking" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/cp3hnu/Bricking.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.1.3;
+			};
+		};
 		ECBF22B12651F0AC006D0FB7 /* XCRemoteSwiftPackageReference "RxSwift" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/ReactiveX/RxSwift.git";
@@ -1835,6 +1847,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = ECBF22B12651F0AC006D0FB7 /* XCRemoteSwiftPackageReference "RxSwift" */;
 			productName = RxSwift;
+		};
+		ECB15E0427421138007920EA /* Bricking */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = ECB15E0327421138007920EA /* XCRemoteSwiftPackageReference "Bricking" */;
+			productName = Bricking;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
